@@ -110,7 +110,6 @@
 				A76737CC270CA1BA000239FA /* AppDelegate.swift */,
 				A76737CE270CA1BA000239FA /* SceneDelegate.swift */,
 				A76737D2270CA1BA000239FA /* Main.storyboard */,
-				A76737D8270CA1BB000239FA /* Assets.xcassets */,
 				A76737DA270CA1BB000239FA /* LaunchScreen.storyboard */,
 				A76737DD270CA1BB000239FA /* Info.plist */,
 				A76737D5270CA1BA000239FA /* Guidomia.xcdatamodeld */,
@@ -156,6 +155,7 @@
 		A7673804270CA5F6000239FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A76737D8270CA1BB000239FA /* Assets.xcassets */,
 				A7673805270CA61E000239FA /* VehicleList.json */,
 			);
 			path = Resources;
