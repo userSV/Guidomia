@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		A76737CD270CA1BA000239FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737CC270CA1BA000239FA /* AppDelegate.swift */; };
 		A76737CF270CA1BA000239FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737CE270CA1BA000239FA /* SceneDelegate.swift */; };
-		A76737D1270CA1BA000239FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737D0270CA1BA000239FA /* ViewController.swift */; };
 		A76737D4270CA1BA000239FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76737D2270CA1BA000239FA /* Main.storyboard */; };
 		A76737D7270CA1BA000239FA /* Guidomia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A76737D5270CA1BA000239FA /* Guidomia.xcdatamodeld */; };
 		A76737D9270CA1BB000239FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76737D8270CA1BB000239FA /* Assets.xcassets */; };
 		A76737DC270CA1BB000239FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76737DA270CA1BB000239FA /* LaunchScreen.storyboard */; };
 		A76737E7270CA1BB000239FA /* GuidomiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737E6270CA1BB000239FA /* GuidomiaTests.swift */; };
 		A76737F2270CA1BB000239FA /* GuidomiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737F1270CA1BB000239FA /* GuidomiaUITests.swift */; };
+		A7673806270CA61E000239FA /* VehicleList.json in Resources */ = {isa = PBXBuildFile; fileRef = A7673805270CA61E000239FA /* VehicleList.json */; };
+		A7673809270CA692000239FA /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673808270CA692000239FA /* Vehicle.swift */; };
+		A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767380B270CA760000239FA /* VehiclesListingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,6 @@
 		A76737C9270CA1BA000239FA /* Guidomia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guidomia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76737CC270CA1BA000239FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A76737CE270CA1BA000239FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A76737D0270CA1BA000239FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A76737D3270CA1BA000239FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A76737D6270CA1BA000239FA /* Guidomia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guidomia.xcdatamodel; sourceTree = "<group>"; };
 		A76737D8270CA1BB000239FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		A76737ED270CA1BB000239FA /* GuidomiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76737F1270CA1BB000239FA /* GuidomiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITests.swift; sourceTree = "<group>"; };
 		A76737F3270CA1BB000239FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7673805270CA61E000239FA /* VehicleList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VehicleList.json; sourceTree = "<group>"; };
+		A7673808270CA692000239FA /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		A767380B270CA760000239FA /* VehiclesListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,10 @@
 		A76737CB270CA1BA000239FA /* Guidomia */ = {
 			isa = PBXGroup;
 			children = (
+				A7673804270CA5F6000239FA /* Resources */,
+				A76737FF270CA50F000239FA /* Application */,
 				A76737CC270CA1BA000239FA /* AppDelegate.swift */,
 				A76737CE270CA1BA000239FA /* SceneDelegate.swift */,
-				A76737D0270CA1BA000239FA /* ViewController.swift */,
 				A76737D2270CA1BA000239FA /* Main.storyboard */,
 				A76737D8270CA1BB000239FA /* Assets.xcassets */,
 				A76737DA270CA1BB000239FA /* LaunchScreen.storyboard */,
@@ -129,6 +134,47 @@
 				A76737F3270CA1BB000239FA /* Info.plist */,
 			);
 			path = GuidomiaUITests;
+			sourceTree = "<group>";
+		};
+		A76737FF270CA50F000239FA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A7673800270CA517000239FA /* Home */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A7673800270CA517000239FA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A7673807270CA680000239FA /* Model */,
+				A767380A270CA733000239FA /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A7673804270CA5F6000239FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A7673805270CA61E000239FA /* VehicleList.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A7673807270CA680000239FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7673808270CA692000239FA /* Vehicle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A767380A270CA733000239FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A767380B270CA760000239FA /* VehiclesListingViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7673806270CA61E000239FA /* VehicleList.json in Resources */,
 				A76737DC270CA1BB000239FA /* LaunchScreen.storyboard in Resources */,
 				A76737D9270CA1BB000239FA /* Assets.xcassets in Resources */,
 				A76737D4270CA1BA000239FA /* Main.storyboard in Resources */,
@@ -262,8 +309,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A76737D7270CA1BA000239FA /* Guidomia.xcdatamodeld in Sources */,
-				A76737D1270CA1BA000239FA /* ViewController.swift in Sources */,
+				A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */,
 				A76737CD270CA1BA000239FA /* AppDelegate.swift in Sources */,
+				A7673809270CA692000239FA /* Vehicle.swift in Sources */,
 				A76737CF270CA1BA000239FA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
