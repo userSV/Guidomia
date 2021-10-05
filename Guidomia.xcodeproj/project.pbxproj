@@ -18,6 +18,7 @@
 		A7673806270CA61E000239FA /* VehicleList.json in Resources */ = {isa = PBXBuildFile; fileRef = A7673805270CA61E000239FA /* VehicleList.json */; };
 		A7673809270CA692000239FA /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673808270CA692000239FA /* Vehicle.swift */; };
 		A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767380B270CA760000239FA /* VehiclesListingViewController.swift */; };
+		A7673812270CB7C7000239FA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673811270CB7C7000239FA /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A7673805270CA61E000239FA /* VehicleList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VehicleList.json; sourceTree = "<group>"; };
 		A7673808270CA692000239FA /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		A767380B270CA760000239FA /* VehiclesListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListingViewController.swift; sourceTree = "<group>"; };
+		A7673811270CB7C7000239FA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,9 @@
 		A76737CB270CA1BA000239FA /* Guidomia */ = {
 			isa = PBXGroup;
 			children = (
-				A7673804270CA5F6000239FA /* Resources */,
 				A76737FF270CA50F000239FA /* Application */,
+				A7673804270CA5F6000239FA /* Resources */,
+				A767380F270CB7A9000239FA /* Common */,
 				A76737CC270CA1BA000239FA /* AppDelegate.swift */,
 				A76737CE270CA1BA000239FA /* SceneDelegate.swift */,
 				A76737D2270CA1BA000239FA /* Main.storyboard */,
@@ -147,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				A7673807270CA680000239FA /* Model */,
+				A767380E270CB504000239FA /* View */,
 				A767380A270CA733000239FA /* Controller */,
 			);
 			path = Home;
@@ -175,6 +179,29 @@
 				A767380B270CA760000239FA /* VehiclesListingViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A767380E270CB504000239FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A767380F270CB7A9000239FA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A7673810270CB7B5000239FA /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A7673810270CB7B5000239FA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A7673811270CB7C7000239FA /* UIView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7673812270CB7C7000239FA /* UIView+Extension.swift in Sources */,
 				A76737D7270CA1BA000239FA /* Guidomia.xcdatamodeld in Sources */,
 				A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */,
 				A76737CD270CA1BA000239FA /* AppDelegate.swift in Sources */,
