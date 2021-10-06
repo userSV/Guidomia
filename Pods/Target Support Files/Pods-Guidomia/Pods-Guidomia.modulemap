@@ -1,0 +1,6 @@
+framework module Pods_Guidomia {
+  umbrella header "Pods-Guidomia-umbrella.h"
+
+  export *
+  module * { export * }
+}

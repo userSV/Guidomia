@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
 
@@ -13,5 +14,6 @@ class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
     @IBOutlet var vehicleImageView: UIImageView!
     @IBOutlet var vehicleNameLabel: UILabel!
     @IBOutlet var vehiclePriceLabel: UILabel!
+    @IBOutlet var ratingView: CosmosView!
 
 }

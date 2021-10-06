@@ -1,0 +1,1020 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09D9D4644EF8480EA5D86DBE0DB7EAAF /* Pods-Guidomia-GuidomiaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C25FA79E53F04569F6AAF422B4E3FB /* Pods-Guidomia-GuidomiaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C6156B7023F7F69398B4119A0AA492B /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1DF35E0E63321E5F772424D9EE48B1 /* CosmosText.swift */; };
+		209D9DD6A82F26B8032A43B060B5D164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2FCFA7D464D486EC1E486FFF2C21B4ED /* Cosmos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE73B1AFBB1A8CB564DB09EA1BE2942E /* Cosmos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E410558A06008A95E19C2FE1D5E014E /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35696210957ADE15680CA907CD0C77 /* CosmosRating.swift */; };
+		449B7D4D4BD118C480786A347A377054 /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFFC8A6CF484661158E175E3BA996B /* CosmosTouchTarget.swift */; };
+		4D8675E7F1C6254904557B7FB84E1C51 /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B148CC2C6AA832097607C6D9E1130A /* CosmosSettings.swift */; };
+		597200B16D147800A6FF90AD60BC94AC /* Pods-GuidomiaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2B362ACA70D9A0A07DF2CD49F2AB182 /* Pods-GuidomiaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E87677262463376144E8B5F6916FCCB /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A70406522118CCB5BDCB099CDB2C36 /* StarFillMode.swift */; };
+		61773DD4962BFA6D7E38DD8A9D998A8A /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174979D91E7D6F800B205ABDD3EB318F /* CosmosDefaultSettings.swift */; };
+		67318BB3E280E0D8FB9161E5557B71E3 /* Cosmos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C6787280DFA6AA5C600055EE6EA4D /* Cosmos-dummy.m */; };
+		6F88D9F36DFA1786FEF1EC551DC8E48E /* Pods-Guidomia-GuidomiaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F7C2DC2885D11FBEFCED336965CDEE /* Pods-Guidomia-GuidomiaUITests-dummy.m */; };
+		772B7FA4384C442360975E95D12383BA /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F95F69EA32AB0728A2CCCF5ECBA773C /* CosmosAccessibility.swift */; };
+		7AA4F48458A149B12BCF7E8EB147E25C /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCA06310EBE16A09D01FECACF9824A3 /* CosmosTouch.swift */; };
+		7E298ECE9B23835D17446526E27D2D67 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11A167F3AA6F45EEA463328BB8EE25 /* StarLayer.swift */; };
+		7EFA3DBC6EF16B520314024501DF5B6C /* Pods-Guidomia-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF478F340A68A45A8755721AC5AD3947 /* Pods-Guidomia-dummy.m */; };
+		8322D938B4C21C24E70FBA1B95797AC9 /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3874A468C60BEB281D0A1E213B262 /* CosmosSize.swift */; };
+		9755F83E9DE9BA2CC07496C16AF80B42 /* RightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5897E31E1EC97ED9A077A7DE06FFED3 /* RightToLeft.swift */; };
+		99D74B802367E9E35B15D35D0A750728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		99DB653A1F70EAEC3490B69E4AC9011F /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7148BEACE4E8E4A331749E74D5874D52 /* CosmosLayerHelper.swift */; };
+		9AD2C1B23A8217B1CD4AA29BBF8F8E5C /* Pods-Guidomia-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E408E2708E49316A14180F56A5C8AA /* Pods-Guidomia-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABFB9BF862F602531FE8131A350542B0 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD3F770945B6DE9CEB6DFFBAC2C00 /* CosmosLayers.swift */; };
+		B560B4F2B0AF8B1BA99FEEA3CC01EFCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		CB4D7FEF62D7943C6E236467F3C516C1 /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E7DAF60D8E62DA62B2CB23D43E16B /* CosmosLocalizedRating.swift */; };
+		CEE8E00775F02663BFBD1277B7F643FE /* Pods-GuidomiaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D1FCC928BB50E84FAA5645675A5962 /* Pods-GuidomiaTests-dummy.m */; };
+		EC1899EF909D17F47C5C0C2064BD2533 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F75C17AB2E3DBBADD82C283A9920F8 /* CosmosView.swift */; };
+		FB056526EBAC07F9F8F2BC28CEF8CA4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		142919974E9E997EC499396E7CE8794F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B4E4F956885DC93F58FD470C813A86D;
+			remoteInfo = "Pods-Guidomia";
+		};
+		D425E26E7FD0A1D4685E2C805235CC2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00F31BD5217A20974B5E9AAC6256D98E;
+			remoteInfo = Cosmos;
+		};
+		E2D30BB1D5F7E203AF8753C7DD0D4577 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00F31BD5217A20974B5E9AAC6256D98E;
+			remoteInfo = Cosmos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05C4280976BF93DA8B36818DE2E2A5E0 /* Cosmos */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cosmos; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		076FE343C9E536C1175B1CAE54E2621B /* Pods-GuidomiaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GuidomiaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0E29BC44317FF962374F2AB1B47271F3 /* Cosmos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.debug.xcconfig; sourceTree = "<group>"; };
+		174979D91E7D6F800B205ABDD3EB318F /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
+		1ACFFC8A6CF484661158E175E3BA996B /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
+		1AD18E2071BFF3BB849FB557FECC1059 /* Pods-GuidomiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuidomiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		216F80CA06C0939C792AEA7AA0E724F7 /* Pods-Guidomia-GuidomiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guidomia-GuidomiaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		22E408E2708E49316A14180F56A5C8AA /* Pods-Guidomia-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guidomia-umbrella.h"; sourceTree = "<group>"; };
+		27663172578C6EA8F38D8F76BAF91E4E /* Pods-Guidomia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guidomia.debug.xcconfig"; sourceTree = "<group>"; };
+		2E9C6787280DFA6AA5C600055EE6EA4D /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
+		2F95F69EA32AB0728A2CCCF5ECBA773C /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
+		31F75C17AB2E3DBBADD82C283A9920F8 /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
+		32E3874A468C60BEB281D0A1E213B262 /* CosmosSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSize.swift; path = Cosmos/CosmosSize.swift; sourceTree = "<group>"; };
+		3C3C4B47B1216C837CD9DD1DB032A07B /* Pods-Guidomia-GuidomiaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Guidomia-GuidomiaUITests-Info.plist"; sourceTree = "<group>"; };
+		46810401C547A8DC4BE8604ABBB7C3AC /* Pods-Guidomia-GuidomiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guidomia-GuidomiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F11A167F3AA6F45EEA463328BB8EE25 /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
+		5032CF85B2B09C69FD26D7FD7F091A4D /* Pods-Guidomia-GuidomiaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Guidomia-GuidomiaUITests.modulemap"; sourceTree = "<group>"; };
+		55049F44A3699DB76E9B032A68B77603 /* Pods-Guidomia-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Guidomia-acknowledgements.plist"; sourceTree = "<group>"; };
+		550B836D1C76F9A3E571A580BDF8C5D5 /* Pods-Guidomia.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Guidomia.modulemap"; sourceTree = "<group>"; };
+		569F011501DB1409E3120F376B6B7D0C /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
+		5AAC8C2DC61DEFE0D68E7CFE8D2B77C9 /* Pods-GuidomiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuidomiaTests.release.xcconfig"; sourceTree = "<group>"; };
+		5BEB81DEE58D1F0296A84AE31BBD543C /* Pods-GuidomiaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GuidomiaTests-Info.plist"; sourceTree = "<group>"; };
+		600BEB350E4F3BC6F7D778D02192BAA2 /* Pods-Guidomia-GuidomiaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Guidomia-GuidomiaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7148BEACE4E8E4A331749E74D5874D52 /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayerHelper.swift; path = Cosmos/CosmosLayerHelper.swift; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		890296137C1F2FE929AA259AC9EC9182 /* Pods-Guidomia */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Guidomia"; path = Pods_Guidomia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B148CC2C6AA832097607C6D9E1130A /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
+		97A70406522118CCB5BDCB099CDB2C36 /* StarFillMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarFillMode.swift; path = Cosmos/StarFillMode.swift; sourceTree = "<group>"; };
+		9B35696210957ADE15680CA907CD0C77 /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A580F170DE1E34FE9D3EAC187BDC7D7D /* Pods-Guidomia-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Guidomia-Info.plist"; sourceTree = "<group>"; };
+		A9F4494DB3A8FBF2C3727319C1426365 /* Pods-Guidomia-GuidomiaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Guidomia-GuidomiaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AF1DF35E0E63321E5F772424D9EE48B1 /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
+		AF478F340A68A45A8755721AC5AD3947 /* Pods-Guidomia-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Guidomia-dummy.m"; sourceTree = "<group>"; };
+		B0F7C2DC2885D11FBEFCED336965CDEE /* Pods-Guidomia-GuidomiaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Guidomia-GuidomiaUITests-dummy.m"; sourceTree = "<group>"; };
+		B2B362ACA70D9A0A07DF2CD49F2AB182 /* Pods-GuidomiaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GuidomiaTests-umbrella.h"; sourceTree = "<group>"; };
+		B5C25FA79E53F04569F6AAF422B4E3FB /* Pods-Guidomia-GuidomiaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guidomia-GuidomiaUITests-umbrella.h"; sourceTree = "<group>"; };
+		BCA2A97FC982616558E63CFEECD0559A /* Pods-Guidomia-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Guidomia-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BCCA06310EBE16A09D01FECACF9824A3 /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
+		BDF098EEAC9D3C24C56C388A8B857644 /* Pods-GuidomiaTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GuidomiaTests"; path = Pods_GuidomiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C950CDC86133450ADB6ACF8BC771EA0D /* Pods-Guidomia-GuidomiaUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Guidomia-GuidomiaUITests"; path = Pods_Guidomia_GuidomiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9BB56620B9207403A1DE1663267ED78 /* Pods-GuidomiaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GuidomiaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D4D1FCC928BB50E84FAA5645675A5962 /* Pods-GuidomiaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GuidomiaTests-dummy.m"; sourceTree = "<group>"; };
+		D81B38398322EB60759D7CBA794420AD /* Pods-Guidomia-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Guidomia-frameworks.sh"; sourceTree = "<group>"; };
+		E3EFD3F770945B6DE9CEB6DFFBAC2C00 /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
+		E5B6A643470459BDAF78465CA50A84F4 /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cosmos.modulemap; sourceTree = "<group>"; };
+		E74EA9E2BFFBD9B8214982F1EAE3497B /* Pods-Guidomia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guidomia.release.xcconfig"; sourceTree = "<group>"; };
+		EA6E7DAF60D8E62DA62B2CB23D43E16B /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
+		F365FBBCE0B5874CA8EAF7F7AB0D5CD2 /* Pods-Guidomia-GuidomiaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Guidomia-GuidomiaUITests-frameworks.sh"; sourceTree = "<group>"; };
+		F39EEA0C4D40303552A248CC69340F49 /* Cosmos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.release.xcconfig; sourceTree = "<group>"; };
+		F5897E31E1EC97ED9A077A7DE06FFED3 /* RightToLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeft.swift; path = Cosmos/Helpers/RightToLeft.swift; sourceTree = "<group>"; };
+		F8E2FC3FD0906AF8FCE92B67ED6180AD /* Pods-GuidomiaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GuidomiaTests.modulemap"; sourceTree = "<group>"; };
+		FE73B1AFBB1A8CB564DB09EA1BE2942E /* Cosmos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-umbrella.h"; sourceTree = "<group>"; };
+		FEA6041AC6BE050FAEDA843AE108C4CD /* Cosmos-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cosmos-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DEC9D66D25D7967B167DEA713C2359C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				209D9DD6A82F26B8032A43B060B5D164 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C81219BEA45E9142B36B82B95FACA4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB056526EBAC07F9F8F2BC28CEF8CA4F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E5167D2D67DB7DDDB4E3CBCFBED40B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B560B4F2B0AF8B1BA99FEEA3CC01EFCD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFCC406144BBA2B775EAFCB952AF3873 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99D74B802367E9E35B15D35D0A750728 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F23443C54A6FFF5F8F9F28F04C1360D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				896D71DA0298A0150A6EC1C9C0228F79 /* Pods-Guidomia */,
+				6B800C96AEBB927342D9DC0E568FD2F2 /* Pods-Guidomia-GuidomiaUITests */,
+				F4CEBAC938F8B82704267B27898EE296 /* Pods-GuidomiaTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1EEF3410A7BAA1DA5F110A17B8CD6B19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8B1D41F350B4C0A5CC6FD8E8873DED5 /* Cosmos */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6B800C96AEBB927342D9DC0E568FD2F2 /* Pods-Guidomia-GuidomiaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5032CF85B2B09C69FD26D7FD7F091A4D /* Pods-Guidomia-GuidomiaUITests.modulemap */,
+				A9F4494DB3A8FBF2C3727319C1426365 /* Pods-Guidomia-GuidomiaUITests-acknowledgements.markdown */,
+				600BEB350E4F3BC6F7D778D02192BAA2 /* Pods-Guidomia-GuidomiaUITests-acknowledgements.plist */,
+				B0F7C2DC2885D11FBEFCED336965CDEE /* Pods-Guidomia-GuidomiaUITests-dummy.m */,
+				F365FBBCE0B5874CA8EAF7F7AB0D5CD2 /* Pods-Guidomia-GuidomiaUITests-frameworks.sh */,
+				3C3C4B47B1216C837CD9DD1DB032A07B /* Pods-Guidomia-GuidomiaUITests-Info.plist */,
+				B5C25FA79E53F04569F6AAF422B4E3FB /* Pods-Guidomia-GuidomiaUITests-umbrella.h */,
+				46810401C547A8DC4BE8604ABBB7C3AC /* Pods-Guidomia-GuidomiaUITests.debug.xcconfig */,
+				216F80CA06C0939C792AEA7AA0E724F7 /* Pods-Guidomia-GuidomiaUITests.release.xcconfig */,
+			);
+			name = "Pods-Guidomia-GuidomiaUITests";
+			path = "Target Support Files/Pods-Guidomia-GuidomiaUITests";
+			sourceTree = "<group>";
+		};
+		79099C1358341EBF13DD1A16CD6E0AFF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5B6A643470459BDAF78465CA50A84F4 /* Cosmos.modulemap */,
+				2E9C6787280DFA6AA5C600055EE6EA4D /* Cosmos-dummy.m */,
+				FEA6041AC6BE050FAEDA843AE108C4CD /* Cosmos-Info.plist */,
+				569F011501DB1409E3120F376B6B7D0C /* Cosmos-prefix.pch */,
+				FE73B1AFBB1A8CB564DB09EA1BE2942E /* Cosmos-umbrella.h */,
+				0E29BC44317FF962374F2AB1B47271F3 /* Cosmos.debug.xcconfig */,
+				F39EEA0C4D40303552A248CC69340F49 /* Cosmos.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Cosmos";
+			sourceTree = "<group>";
+		};
+		820626191B8FB5B6C2E2DB696C1CA1AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05C4280976BF93DA8B36818DE2E2A5E0 /* Cosmos */,
+				890296137C1F2FE929AA259AC9EC9182 /* Pods-Guidomia */,
+				C950CDC86133450ADB6ACF8BC771EA0D /* Pods-Guidomia-GuidomiaUITests */,
+				BDF098EEAC9D3C24C56C388A8B857644 /* Pods-GuidomiaTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		896D71DA0298A0150A6EC1C9C0228F79 /* Pods-Guidomia */ = {
+			isa = PBXGroup;
+			children = (
+				550B836D1C76F9A3E571A580BDF8C5D5 /* Pods-Guidomia.modulemap */,
+				BCA2A97FC982616558E63CFEECD0559A /* Pods-Guidomia-acknowledgements.markdown */,
+				55049F44A3699DB76E9B032A68B77603 /* Pods-Guidomia-acknowledgements.plist */,
+				AF478F340A68A45A8755721AC5AD3947 /* Pods-Guidomia-dummy.m */,
+				D81B38398322EB60759D7CBA794420AD /* Pods-Guidomia-frameworks.sh */,
+				A580F170DE1E34FE9D3EAC187BDC7D7D /* Pods-Guidomia-Info.plist */,
+				22E408E2708E49316A14180F56A5C8AA /* Pods-Guidomia-umbrella.h */,
+				27663172578C6EA8F38D8F76BAF91E4E /* Pods-Guidomia.debug.xcconfig */,
+				E74EA9E2BFFBD9B8214982F1EAE3497B /* Pods-Guidomia.release.xcconfig */,
+			);
+			name = "Pods-Guidomia";
+			path = "Target Support Files/Pods-Guidomia";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				1EEF3410A7BAA1DA5F110A17B8CD6B19 /* Pods */,
+				820626191B8FB5B6C2E2DB696C1CA1AD /* Products */,
+				0F23443C54A6FFF5F8F9F28F04C1360D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8B1D41F350B4C0A5CC6FD8E8873DED5 /* Cosmos */ = {
+			isa = PBXGroup;
+			children = (
+				2F95F69EA32AB0728A2CCCF5ECBA773C /* CosmosAccessibility.swift */,
+				174979D91E7D6F800B205ABDD3EB318F /* CosmosDefaultSettings.swift */,
+				7148BEACE4E8E4A331749E74D5874D52 /* CosmosLayerHelper.swift */,
+				E3EFD3F770945B6DE9CEB6DFFBAC2C00 /* CosmosLayers.swift */,
+				EA6E7DAF60D8E62DA62B2CB23D43E16B /* CosmosLocalizedRating.swift */,
+				9B35696210957ADE15680CA907CD0C77 /* CosmosRating.swift */,
+				95B148CC2C6AA832097607C6D9E1130A /* CosmosSettings.swift */,
+				32E3874A468C60BEB281D0A1E213B262 /* CosmosSize.swift */,
+				AF1DF35E0E63321E5F772424D9EE48B1 /* CosmosText.swift */,
+				BCCA06310EBE16A09D01FECACF9824A3 /* CosmosTouch.swift */,
+				1ACFFC8A6CF484661158E175E3BA996B /* CosmosTouchTarget.swift */,
+				31F75C17AB2E3DBBADD82C283A9920F8 /* CosmosView.swift */,
+				F5897E31E1EC97ED9A077A7DE06FFED3 /* RightToLeft.swift */,
+				97A70406522118CCB5BDCB099CDB2C36 /* StarFillMode.swift */,
+				4F11A167F3AA6F45EEA463328BB8EE25 /* StarLayer.swift */,
+				79099C1358341EBF13DD1A16CD6E0AFF /* Support Files */,
+			);
+			name = Cosmos;
+			path = Cosmos;
+			sourceTree = "<group>";
+		};
+		F4CEBAC938F8B82704267B27898EE296 /* Pods-GuidomiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8E2FC3FD0906AF8FCE92B67ED6180AD /* Pods-GuidomiaTests.modulemap */,
+				076FE343C9E536C1175B1CAE54E2621B /* Pods-GuidomiaTests-acknowledgements.markdown */,
+				C9BB56620B9207403A1DE1663267ED78 /* Pods-GuidomiaTests-acknowledgements.plist */,
+				D4D1FCC928BB50E84FAA5645675A5962 /* Pods-GuidomiaTests-dummy.m */,
+				5BEB81DEE58D1F0296A84AE31BBD543C /* Pods-GuidomiaTests-Info.plist */,
+				B2B362ACA70D9A0A07DF2CD49F2AB182 /* Pods-GuidomiaTests-umbrella.h */,
+				1AD18E2071BFF3BB849FB557FECC1059 /* Pods-GuidomiaTests.debug.xcconfig */,
+				5AAC8C2DC61DEFE0D68E7CFE8D2B77C9 /* Pods-GuidomiaTests.release.xcconfig */,
+			);
+			name = "Pods-GuidomiaTests";
+			path = "Target Support Files/Pods-GuidomiaTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		40097E5779029102CCD9C3E4EE752DDF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FCFA7D464D486EC1E486FFF2C21B4ED /* Cosmos-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46E7D2D876CFD9ABFDBB37D8916F77F1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09D9D4644EF8480EA5D86DBE0DB7EAAF /* Pods-Guidomia-GuidomiaUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67DD34C41AE8F9F679DB5BD564EE073B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AD2C1B23A8217B1CD4AA29BBF8F8E5C /* Pods-Guidomia-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDF456276D115690A636501CEC47C014 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597200B16D147800A6FF90AD60BC94AC /* Pods-GuidomiaTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		00F31BD5217A20974B5E9AAC6256D98E /* Cosmos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5531D3CEF3EBE4420E9BFCEFA9DD7F6 /* Build configuration list for PBXNativeTarget "Cosmos" */;
+			buildPhases = (
+				40097E5779029102CCD9C3E4EE752DDF /* Headers */,
+				B1B8AB666CBBC24142B5B2D2C578F7E6 /* Sources */,
+				6DEC9D66D25D7967B167DEA713C2359C /* Frameworks */,
+				C77B64B25EBB18C8D211C061D92B0B4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cosmos;
+			productName = Cosmos;
+			productReference = 05C4280976BF93DA8B36818DE2E2A5E0 /* Cosmos */;
+			productType = "com.apple.product-type.framework";
+		};
+		5B4E4F956885DC93F58FD470C813A86D /* Pods-Guidomia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D4BB7C53979F1A4DAEE6BFD881A3CE7 /* Build configuration list for PBXNativeTarget "Pods-Guidomia" */;
+			buildPhases = (
+				67DD34C41AE8F9F679DB5BD564EE073B /* Headers */,
+				BDEB56578068DADE624F0330AAB7AFCE /* Sources */,
+				9C81219BEA45E9142B36B82B95FACA4B /* Frameworks */,
+				1EC65F44A4AFA8A16F44D56A21B2B2AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90A8FB28653077200F34D18C26ABB13D /* PBXTargetDependency */,
+			);
+			name = "Pods-Guidomia";
+			productName = Pods_Guidomia;
+			productReference = 890296137C1F2FE929AA259AC9EC9182 /* Pods-Guidomia */;
+			productType = "com.apple.product-type.framework";
+		};
+		B75BB1601D919766EEC9FBB37DA7D4B0 /* Pods-Guidomia-GuidomiaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 892C5B78A9545562BA59B4BBD5EDC33D /* Build configuration list for PBXNativeTarget "Pods-Guidomia-GuidomiaUITests" */;
+			buildPhases = (
+				46E7D2D876CFD9ABFDBB37D8916F77F1 /* Headers */,
+				8FEF5647F9731E33A9F56A6D1B277292 /* Sources */,
+				EFCC406144BBA2B775EAFCB952AF3873 /* Frameworks */,
+				40569DC8EBEC12BAB32C8AD8A2895DD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51CA9560AD53FF588A70B0CEEACD5052 /* PBXTargetDependency */,
+			);
+			name = "Pods-Guidomia-GuidomiaUITests";
+			productName = Pods_Guidomia_GuidomiaUITests;
+			productReference = C950CDC86133450ADB6ACF8BC771EA0D /* Pods-Guidomia-GuidomiaUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		D4494638A64F95E5926404DAAD80B44D /* Pods-GuidomiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385B12A982769952364A0CCD7134E657 /* Build configuration list for PBXNativeTarget "Pods-GuidomiaTests" */;
+			buildPhases = (
+				BDF456276D115690A636501CEC47C014 /* Headers */,
+				97FA7FDCBADDE25897BF23F513716329 /* Sources */,
+				9E5167D2D67DB7DDDB4E3CBCFBED40B8 /* Frameworks */,
+				8EAABA8AB339CB7610B7EE4DE0606D10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3B6B26467E81828DA9F9E273CD24220 /* PBXTargetDependency */,
+			);
+			name = "Pods-GuidomiaTests";
+			productName = Pods_GuidomiaTests;
+			productReference = BDF098EEAC9D3C24C56C388A8B857644 /* Pods-GuidomiaTests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 820626191B8FB5B6C2E2DB696C1CA1AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00F31BD5217A20974B5E9AAC6256D98E /* Cosmos */,
+				5B4E4F956885DC93F58FD470C813A86D /* Pods-Guidomia */,
+				B75BB1601D919766EEC9FBB37DA7D4B0 /* Pods-Guidomia-GuidomiaUITests */,
+				D4494638A64F95E5926404DAAD80B44D /* Pods-GuidomiaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EC65F44A4AFA8A16F44D56A21B2B2AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40569DC8EBEC12BAB32C8AD8A2895DD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EAABA8AB339CB7610B7EE4DE0606D10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C77B64B25EBB18C8D211C061D92B0B4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8FEF5647F9731E33A9F56A6D1B277292 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F88D9F36DFA1786FEF1EC551DC8E48E /* Pods-Guidomia-GuidomiaUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97FA7FDCBADDE25897BF23F513716329 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE8E00775F02663BFBD1277B7F643FE /* Pods-GuidomiaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1B8AB666CBBC24142B5B2D2C578F7E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67318BB3E280E0D8FB9161E5557B71E3 /* Cosmos-dummy.m in Sources */,
+				772B7FA4384C442360975E95D12383BA /* CosmosAccessibility.swift in Sources */,
+				61773DD4962BFA6D7E38DD8A9D998A8A /* CosmosDefaultSettings.swift in Sources */,
+				99DB653A1F70EAEC3490B69E4AC9011F /* CosmosLayerHelper.swift in Sources */,
+				ABFB9BF862F602531FE8131A350542B0 /* CosmosLayers.swift in Sources */,
+				CB4D7FEF62D7943C6E236467F3C516C1 /* CosmosLocalizedRating.swift in Sources */,
+				3E410558A06008A95E19C2FE1D5E014E /* CosmosRating.swift in Sources */,
+				4D8675E7F1C6254904557B7FB84E1C51 /* CosmosSettings.swift in Sources */,
+				8322D938B4C21C24E70FBA1B95797AC9 /* CosmosSize.swift in Sources */,
+				1C6156B7023F7F69398B4119A0AA492B /* CosmosText.swift in Sources */,
+				7AA4F48458A149B12BCF7E8EB147E25C /* CosmosTouch.swift in Sources */,
+				449B7D4D4BD118C480786A347A377054 /* CosmosTouchTarget.swift in Sources */,
+				EC1899EF909D17F47C5C0C2064BD2533 /* CosmosView.swift in Sources */,
+				9755F83E9DE9BA2CC07496C16AF80B42 /* RightToLeft.swift in Sources */,
+				5E87677262463376144E8B5F6916FCCB /* StarFillMode.swift in Sources */,
+				7E298ECE9B23835D17446526E27D2D67 /* StarLayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDEB56578068DADE624F0330AAB7AFCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EFA3DBC6EF16B520314024501DF5B6C /* Pods-Guidomia-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		51CA9560AD53FF588A70B0CEEACD5052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cosmos;
+			target = 00F31BD5217A20974B5E9AAC6256D98E /* Cosmos */;
+			targetProxy = E2D30BB1D5F7E203AF8753C7DD0D4577 /* PBXContainerItemProxy */;
+		};
+		90A8FB28653077200F34D18C26ABB13D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cosmos;
+			target = 00F31BD5217A20974B5E9AAC6256D98E /* Cosmos */;
+			targetProxy = D425E26E7FD0A1D4685E2C805235CC2F /* PBXContainerItemProxy */;
+		};
+		E3B6B26467E81828DA9F9E273CD24220 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Guidomia";
+			target = 5B4E4F956885DC93F58FD470C813A86D /* Pods-Guidomia */;
+			targetProxy = 142919974E9E997EC499396E7CE8794F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F169341454E23855598C8D5CD9A1C54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AAC8C2DC61DEFE0D68E7CFE8D2B77C9 /* Pods-GuidomiaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		20BFD8E97A935A4E060F7BCD8531E482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E74EA9E2BFFBD9B8214982F1EAE3497B /* Pods-Guidomia.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Guidomia/Pods-Guidomia-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Guidomia/Pods-Guidomia.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5D1819E0294A3DDEE9EF6EE05CC32C22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27663172578C6EA8F38D8F76BAF91E4E /* Pods-Guidomia.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Guidomia/Pods-Guidomia-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Guidomia/Pods-Guidomia.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6EC69149E28F5E27C4706FFEAF8B58F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E29BC44317FF962374F2AB1B47271F3 /* Cosmos.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cosmos/Cosmos-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
+				PRODUCT_MODULE_NAME = Cosmos;
+				PRODUCT_NAME = Cosmos;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		C78C1BA85703BCE69743B7C85B847990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F39EEA0C4D40303552A248CC69340F49 /* Cosmos.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cosmos/Cosmos-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
+				PRODUCT_MODULE_NAME = Cosmos;
+				PRODUCT_NAME = Cosmos;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D6723D877D2151C2FFEC6CBDCD319E41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AD18E2071BFF3BB849FB557FECC1059 /* Pods-GuidomiaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GuidomiaTests/Pods-GuidomiaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F124B67B405BEA119847739C5D72E76F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 216F80CA06C0939C792AEA7AA0E724F7 /* Pods-Guidomia-GuidomiaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Guidomia-GuidomiaUITests/Pods-Guidomia-GuidomiaUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Guidomia-GuidomiaUITests/Pods-Guidomia-GuidomiaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FC0387358005CB512090FCA595D255DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46810401C547A8DC4BE8604ABBB7C3AC /* Pods-Guidomia-GuidomiaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Guidomia-GuidomiaUITests/Pods-Guidomia-GuidomiaUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Guidomia-GuidomiaUITests/Pods-Guidomia-GuidomiaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D4BB7C53979F1A4DAEE6BFD881A3CE7 /* Build configuration list for PBXNativeTarget "Pods-Guidomia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D1819E0294A3DDEE9EF6EE05CC32C22 /* Debug */,
+				20BFD8E97A935A4E060F7BCD8531E482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385B12A982769952364A0CCD7134E657 /* Build configuration list for PBXNativeTarget "Pods-GuidomiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6723D877D2151C2FFEC6CBDCD319E41 /* Debug */,
+				0F169341454E23855598C8D5CD9A1C54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		892C5B78A9545562BA59B4BBD5EDC33D /* Build configuration list for PBXNativeTarget "Pods-Guidomia-GuidomiaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC0387358005CB512090FCA595D255DB /* Debug */,
+				F124B67B405BEA119847739C5D72E76F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5531D3CEF3EBE4420E9BFCEFA9DD7F6 /* Build configuration list for PBXNativeTarget "Cosmos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EC69149E28F5E27C4706FFEAF8B58F4 /* Debug */,
+				C78C1BA85703BCE69743B7C85B847990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
