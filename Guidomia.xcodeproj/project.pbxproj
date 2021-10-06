@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,6 @@
 		A76737DC270CA1BB000239FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76737DA270CA1BB000239FA /* LaunchScreen.storyboard */; };
 		A76737E7270CA1BB000239FA /* GuidomiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737E6270CA1BB000239FA /* GuidomiaTests.swift */; };
 		A76737F2270CA1BB000239FA /* GuidomiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737F1270CA1BB000239FA /* GuidomiaUITests.swift */; };
-		A7673806270CA61E000239FA /* VehicleList.json in Resources */ = {isa = PBXBuildFile; fileRef = A7673805270CA61E000239FA /* VehicleList.json */; };
 		A7673809270CA692000239FA /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673808270CA692000239FA /* Vehicle.swift */; };
 		A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767380B270CA760000239FA /* VehiclesListingViewController.swift */; };
 		A7673812270CB7C7000239FA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673811270CB7C7000239FA /* UIView+Extension.swift */; };
@@ -24,6 +23,9 @@
 		A7673816270CB93A000239FA /* VehicleDescriptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */; };
 		A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E2E660270D534E00DEB77E /* SeparatorView.xib */; };
 		A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E662270D54CA00DEB77E /* SeparatorView.swift */; };
+		A7E2E666270D642A00DEB77E /* VehicleListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */; };
+		A7E2E668270D6D4A00DEB77E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E667270D6D4A00DEB77E /* String+Extension.swift */; };
+		A7E2E66A270D727400DEB77E /* VehicleListJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E669270D727400DEB77E /* VehicleListJson.swift */; };
 		AEAFFB7F4153546386B7B72F /* Pods_Guidomia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33A1AE9BF3703810C621EF9 /* Pods_Guidomia.framework */; };
 		F19CC9FB7C822B3CCD87E52D /* Pods_Guidomia_GuidomiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48055A3944676419EF1F1C99 /* Pods_Guidomia_GuidomiaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,7 +68,6 @@
 		A76737ED270CA1BB000239FA /* GuidomiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76737F1270CA1BB000239FA /* GuidomiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITests.swift; sourceTree = "<group>"; };
 		A76737F3270CA1BB000239FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7673805270CA61E000239FA /* VehicleList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VehicleList.json; sourceTree = "<group>"; };
 		A7673808270CA692000239FA /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		A767380B270CA760000239FA /* VehiclesListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListingViewController.swift; sourceTree = "<group>"; };
 		A7673811270CB7C7000239FA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -74,6 +75,9 @@
 		A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleDescriptionHeaderView.xib; sourceTree = "<group>"; };
 		A7E2E660270D534E00DEB77E /* SeparatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorView.xib; sourceTree = "<group>"; };
 		A7E2E662270D54CA00DEB77E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListingViewModel.swift; sourceTree = "<group>"; };
+		A7E2E667270D6D4A00DEB77E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		A7E2E669270D727400DEB77E /* VehicleListJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListJson.swift; sourceTree = "<group>"; };
 		B408E05B252A24D6B0100B66 /* Pods-Guidomia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guidomia.debug.xcconfig"; path = "Target Support Files/Pods-Guidomia/Pods-Guidomia.debug.xcconfig"; sourceTree = "<group>"; };
 		C82198AEE2FD192095BBF66E /* Pods-Guidomia-GuidomiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guidomia-GuidomiaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Guidomia-GuidomiaUITests/Pods-Guidomia-GuidomiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F33A1AE9BF3703810C621EF9 /* Pods_Guidomia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guidomia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +121,6 @@
 				1AAC696FAEF792C9A7BD5425 /* Pods-GuidomiaTests.debug.xcconfig */,
 				9423E3DE0F5A3EDC12D72A87 /* Pods-GuidomiaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,6 +194,7 @@
 				A7673807270CA680000239FA /* Model */,
 				A767380E270CB504000239FA /* View */,
 				A767380A270CA733000239FA /* Controller */,
+				A7E2E664270D641200DEB77E /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -199,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				A76737D8270CA1BB000239FA /* Assets.xcassets */,
-				A7673805270CA61E000239FA /* VehicleList.json */,
+				A7E2E669270D727400DEB77E /* VehicleListJson.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -243,8 +247,17 @@
 			isa = PBXGroup;
 			children = (
 				A7673811270CB7C7000239FA /* UIView+Extension.swift */,
+				A7E2E667270D6D4A00DEB77E /* String+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A7E2E664270D641200DEB77E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BABCA09B07FB1692237EA9B7 /* Frameworks */ = {
@@ -366,7 +379,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7673816270CB93A000239FA /* VehicleDescriptionHeaderView.xib in Resources */,
-				A7673806270CA61E000239FA /* VehicleList.json in Resources */,
 				A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */,
 				A76737DC270CA1BB000239FA /* LaunchScreen.storyboard in Resources */,
 				A76737D9270CA1BB000239FA /* Assets.xcassets in Resources */,
@@ -501,11 +513,14 @@
 				A7673812270CB7C7000239FA /* UIView+Extension.swift in Sources */,
 				A76737D7270CA1BA000239FA /* Guidomia.xcdatamodeld in Sources */,
 				A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */,
+				A7E2E66A270D727400DEB77E /* VehicleListJson.swift in Sources */,
 				A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */,
 				A76737CD270CA1BA000239FA /* AppDelegate.swift in Sources */,
 				A7673809270CA692000239FA /* Vehicle.swift in Sources */,
 				A7673814270CB92B000239FA /* VehicleDescriptionHeaderView.swift in Sources */,
 				A76737CF270CA1BA000239FA /* SceneDelegate.swift in Sources */,
+				A7E2E668270D6D4A00DEB77E /* String+Extension.swift in Sources */,
+				A7E2E666270D642A00DEB77E /* VehicleListingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

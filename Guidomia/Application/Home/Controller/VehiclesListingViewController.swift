@@ -11,6 +11,9 @@ import UIKit
  */
 class VehiclesListingViewController: UIViewController {
 
+    //MARK:- Properties
+    var viewModel: VehicleListingViewModel!
+    
     //MARK:- IBOutlets
     @IBOutlet var vehiclesTableView: UITableView!
     
@@ -24,6 +27,7 @@ class VehiclesListingViewController: UIViewController {
     //MARK:- Initializer
     private func initializeOnLoad() {
         self.registerNibs()
+        self.viewModel.getVehicleDetails()
     }
     
     //MARK:- Register Nibs
@@ -39,7 +43,7 @@ class VehiclesListingViewController: UIViewController {
 //MARK:- UITableViewDataSource
 extension VehiclesListingViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +65,8 @@ extension VehiclesListingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerview = tableView.dequeueReusableHeaderFooterView(withIdentifier: VehicleDescriptionHeaderView.reuseIdentifier) as? VehicleDescriptionHeaderView {
+            let headerViewModel = viewModel.viewModelForVehicleAt(section)
+            headerview.setDataWith(viewModel: headerViewModel)
             return headerview
         }
         return nil
@@ -71,5 +77,17 @@ extension VehiclesListingViewController: UITableViewDelegate {
             return footerView
         }
         return nil
+    }
+}
+
+extension VehiclesListingViewController: VehicleListViewPresenter {
+    func didReceiveVehiclesList() {
+        DispatchQueue.main.async {
+            self.vehiclesTableView.reloadData()
+        }
+    }
+    
+    func didReceiveErrorOnVehiclesListFetch(errorMessage: String) {
+        
     }
 }
