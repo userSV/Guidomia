@@ -20,4 +20,9 @@ extension UIView {
             self.layer.cornerRadius = newValue
         }
     }
+    
+    /// returns the name of the calling class which can be used as the reuse identifier for tableview  views
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
 }
