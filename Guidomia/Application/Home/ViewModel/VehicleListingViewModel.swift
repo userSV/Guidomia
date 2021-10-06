@@ -50,7 +50,7 @@ class VehicleListingViewModel {
     /// - Parameter section: current section index
     /// - Returns: visual representation of data
     func viewModelForVehicleAt(_ section: Int) -> VehicleDetailViewModel {
-        let viewModel = VehicleDetailViewModel(name: self.vehicles[section].makeName, price: self.vehicles[section].customerPrice, rating: self.vehicles[section].rating, image: self.vehicles[section].image)
+        let viewModel = VehicleDetailViewModel(make: self.vehicles[section].makeName, price: self.vehicles[section].customerPrice, rating: self.vehicles[section].rating, image: self.vehicles[section].image, model: self.vehicles[section].modelName)
         return viewModel
     }
 }

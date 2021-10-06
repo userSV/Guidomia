@@ -28,17 +28,27 @@ class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
 }
 
 struct VehicleDetailViewModel {
-    var name: String?
+    var make: String?
     var price: Double?
     var rating: Float?
     var image: String?
+    var model: String?
     
+    /// display price formatted
     var displayPrice: String {
         if let price = price {
             let priceToInt = Int(price)
             let formattedPrice = String(priceToInt).formattedForThousand() ?? "0"
-            return "Price: \(formattedPrice)"
+            return "\(Constants.VehicleInfo.priceText): \(formattedPrice)"
         }
-        return "Price: 0"
+        return "\(Constants.VehicleInfo.priceText): 0"
+    }
+    
+    var name: String {
+        if let make = make,
+           let model = model {
+            return make + " " + model
+        }
+        return ""
     }
 }

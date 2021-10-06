@@ -20,11 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //initialize the first viewcontroller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navigationVC: UINavigationController = storyboard.instantiateViewController(withIdentifier: "BaseNavigationVC") as! UINavigationController
         let vehicleListVC: VehiclesListingViewController = storyboard.instantiateViewController(withIdentifier: "VehiclesListingViewController") as! VehiclesListingViewController
         vehicleListVC.viewModel = VehicleListingViewModel(view: vehicleListVC)
-        navigationVC.setViewControllers([vehicleListVC], animated: false)
-        window?.rootViewController = navigationVC
+        window?.rootViewController = vehicleListVC
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

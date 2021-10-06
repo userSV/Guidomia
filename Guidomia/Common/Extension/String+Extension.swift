@@ -19,7 +19,7 @@ extension String {
         if let value = self.toInt(),
            value >= 1000 {
             if let rangeOfLastZeroes = self.range(of: "000", options: .backwards) {
-                return self.replacingCharacters(in: rangeOfLastZeroes, with: "K")
+                return self.replacingCharacters(in: rangeOfLastZeroes, with: "k")
             }
         }
         return nil
