@@ -28,12 +28,13 @@ class VehicleListingViewModel {
         let decoder = JSONDecoder()
         DispatchQueue.global().async {
             do {
-                let jsonData = Data(vehicleListJson.utf8)
-                let vehicles = try decoder.decode([Vehicle].self, from: jsonData)
-                self.vehicles.append(contentsOf: vehicles)
-                self.viewDelegate?.didReceiveVehiclesList()
+                if let url = Bundle.main.url(forResource: "VehicleList", withExtension: "json") {
+                    let data = try Data(contentsOf: url)
+                    let vehicles = try decoder.decode([Vehicle].self, from: data)
+                    self.vehicles.append(contentsOf: vehicles)
+                    self.viewDelegate?.didReceiveVehiclesList()
+                }
             } catch(let error) {
-                print(error)
                 self.viewDelegate?.didReceiveErrorOnVehiclesListFetch(errorMessage: error.localizedDescription)
             }
         }
@@ -49,7 +50,7 @@ class VehicleListingViewModel {
     /// - Parameter section: current section index
     /// - Returns: visual representation of data
     func viewModelForVehicleAt(_ section: Int) -> VehicleDetailViewModel {
-        let viewModel = VehicleDetailViewModel(name: self.vehicles[section].makeName, price: self.vehicles[section].customerPrice, rating: self.vehicles[section].rating)
+        let viewModel = VehicleDetailViewModel(name: self.vehicles[section].makeName, price: self.vehicles[section].customerPrice, rating: self.vehicles[section].rating, image: self.vehicles[section].image)
         return viewModel
     }
 }

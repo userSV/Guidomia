@@ -21,6 +21,9 @@ class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
         self.vehicleNameLabel.text = viewModel.name
         self.vehiclePriceLabel.text = viewModel.displayPrice
         self.ratingView.rating = Double(viewModel.rating ?? 0)
+        if let image = viewModel.image {
+            self.vehicleImageView.image = UIImage(named: image)
+        }
     }
 }
 
@@ -28,6 +31,7 @@ struct VehicleDetailViewModel {
     var name: String?
     var price: Double?
     var rating: Float?
+    var image: String?
     
     var displayPrice: String {
         if let price = price {

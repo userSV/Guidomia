@@ -16,10 +16,11 @@ struct Vehicle: Decodable {
     var rating: Float?
     var consList: [String]?
     var prosList: [String]?
+    var image: String?
     
     enum CodingKeys: String, CodingKey {
         case modelName = "model"
         case makeName = "make"
-        case customerPrice, marketPrice, rating, prosList, consList
+        case customerPrice, marketPrice, rating, prosList, consList, image
     }
 }
