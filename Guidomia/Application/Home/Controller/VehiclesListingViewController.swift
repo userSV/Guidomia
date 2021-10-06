@@ -16,6 +16,8 @@ class VehiclesListingViewController: UIViewController {
     
     //MARK:- IBOutlets
     @IBOutlet var vehiclesTableView: UITableView!
+    @IBOutlet var vehicleMakeFilterView: UIView!
+    @IBOutlet var vehicleModelFilterView: UIView!
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
@@ -27,6 +29,8 @@ class VehiclesListingViewController: UIViewController {
     //MARK:- Initializer
     private func initializeOnLoad() {
         self.registerNibs()
+        self.vehicleMakeFilterView.addShadow(offset: CGSize(width: 0, height: 3))
+        self.vehicleModelFilterView.addShadow(offset: CGSize(width: 0, height: 3))
         self.viewModel.getVehicleDetails()
     }
     
