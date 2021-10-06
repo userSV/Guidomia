@@ -19,6 +19,10 @@
 		A7673809270CA692000239FA /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673808270CA692000239FA /* Vehicle.swift */; };
 		A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767380B270CA760000239FA /* VehiclesListingViewController.swift */; };
 		A7673812270CB7C7000239FA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673811270CB7C7000239FA /* UIView+Extension.swift */; };
+		A7673814270CB92B000239FA /* VehicleDescriptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */; };
+		A7673816270CB93A000239FA /* VehicleDescriptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */; };
+		A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E2E660270D534E00DEB77E /* SeparatorView.xib */; };
+		A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E662270D54CA00DEB77E /* SeparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		A7673808270CA692000239FA /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		A767380B270CA760000239FA /* VehiclesListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListingViewController.swift; sourceTree = "<group>"; };
 		A7673811270CB7C7000239FA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDescriptionHeaderView.swift; sourceTree = "<group>"; };
+		A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleDescriptionHeaderView.xib; sourceTree = "<group>"; };
+		A7E2E660270D534E00DEB77E /* SeparatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorView.xib; sourceTree = "<group>"; };
+		A7E2E662270D54CA00DEB77E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +192,10 @@
 		A767380E270CB504000239FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */,
+				A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */,
+				A7E2E660270D534E00DEB77E /* SeparatorView.xib */,
+				A7E2E662270D54CA00DEB77E /* SeparatorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,7 +319,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7673816270CB93A000239FA /* VehicleDescriptionHeaderView.xib in Resources */,
 				A7673806270CA61E000239FA /* VehicleList.json in Resources */,
+				A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */,
 				A76737DC270CA1BB000239FA /* LaunchScreen.storyboard in Resources */,
 				A76737D9270CA1BB000239FA /* Assets.xcassets in Resources */,
 				A76737D4270CA1BA000239FA /* Main.storyboard in Resources */,
@@ -337,9 +351,11 @@
 			files = (
 				A7673812270CB7C7000239FA /* UIView+Extension.swift in Sources */,
 				A76737D7270CA1BA000239FA /* Guidomia.xcdatamodeld in Sources */,
+				A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */,
 				A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */,
 				A76737CD270CA1BA000239FA /* AppDelegate.swift in Sources */,
 				A7673809270CA692000239FA /* Vehicle.swift in Sources */,
+				A7673814270CB92B000239FA /* VehicleDescriptionHeaderView.swift in Sources */,
 				A76737CF270CA1BA000239FA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
