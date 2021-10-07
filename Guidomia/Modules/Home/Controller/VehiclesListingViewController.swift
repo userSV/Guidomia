@@ -20,11 +20,11 @@ class VehiclesListingViewController: UIViewController {
     
     //MARK:- IBActions
     @IBAction func anyMakeTapped(sender: UIButton) {
-        self.presentActionSheet(withData: viewModel.makesListOfVehicles())
+        self.presentActionSheet(withData: viewModel.makesListOfVehicles(), type: .vehicleMake)
     }
     
     @IBAction func anyModelTapped(sender: UIButton) {
-        self.presentActionSheet(withData: viewModel.modelListOfVehicles())
+        self.presentActionSheet(withData: viewModel.modelListOfVehicles(), type: .vehicleModel)
     }
     
     //MARK:- Properties
@@ -63,8 +63,9 @@ class VehiclesListingViewController: UIViewController {
     }
     
     //MARK:- Helper Functions
-    private func presentActionSheet(withData data: [String]) {
+    private func presentActionSheet(withData data: [String], type: CustomActionSheet.CustomActionSheetContentType) {
         customActionSheet.initializeWith(data: data, delegateView: self, frame: self.view.frame)
+        customActionSheet.contentType = type
         self.view.addSubview(customActionSheet)
         customActionSheet.addActionSheetOnParentViewWith(frame: view.frame, view: view)
     }
@@ -157,9 +158,12 @@ extension VehiclesListingViewController: CustomActionSheetDelegate {
         self.view.layoutIfNeeded()
     }
     
-    func didSelectAnItemFromActionSheet(value: Any) {
-        if let valueAsString = value as? String {
-            self.currentMakeLabel.text = valueAsString
+    func didSelectAnItemFromActionSheet(value: Any, contentType: CustomActionSheet.CustomActionSheetContentType) {
+        switch contentType {
+        case .vehicleMake:
+            self.currentMakeLabel.text = "\(value)"
+        case .vehicleModel:
+            self.currentModelLabel.text = "\(value)"
         }
     }
 }

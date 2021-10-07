@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CustomActionSheetDelegate: AnyObject {
-    func didSelectAnItemFromActionSheet(value: Any)
+    func didSelectAnItemFromActionSheet(value: Any, contentType: CustomActionSheet.CustomActionSheetContentType)
     func didCompleteViewPresentation()
 }
 
@@ -24,6 +24,7 @@ class CustomActionSheet: UIView {
     private var dataSource = [String]()
     private let rowHeight: CGFloat = 44
     weak var delegate: CustomActionSheetDelegate?
+    var contentType: CustomActionSheetContentType = .vehicleMake
     enum CustomActionSheetContentType {
         case vehicleMake, vehicleModel
     }
@@ -109,7 +110,7 @@ extension CustomActionSheet: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.didSelectAnItemFromActionSheet(value: dataSource[indexPath.row])
+        self.delegate?.didSelectAnItemFromActionSheet(value: dataSource[indexPath.row], contentType: self.contentType)
         UIView.animate(withDuration: 0.2) {
             self.alpha = 0
         } completion: {_ in self.removeCurrentView()}
