@@ -22,5 +22,6 @@ struct Constants {
     
     struct JsonFile {
         static let vehicleList = "VehicleList"
+        static let jsonExtension = "json"
     }
 }

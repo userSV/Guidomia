@@ -45,7 +45,7 @@ class VehicleListingViewModel {
     /// fetch the details from json file
     func getVehicleDetails() {
         DispatchQueue.global().async {
-            if var vehicles = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: "json") {
+            if var vehicles = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: Constants.JsonFile.jsonExtension) {
                 let filteredList = self.filterProsConsList(vehicles: &vehicles)
                 self.vehicles.append(contentsOf: filteredList)
                 self.viewDelegate?.didReceiveVehiclesList()
