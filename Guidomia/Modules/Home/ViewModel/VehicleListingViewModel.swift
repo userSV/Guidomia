@@ -25,6 +25,7 @@ class VehicleListingViewModel {
     }
     
     //MARK:- Helper Functions
+    /// fetch the details from json file
     func getVehicleDetails() {
         DispatchQueue.global().async {
             if var vehicles = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: "json") {
