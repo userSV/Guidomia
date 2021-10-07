@@ -11,13 +11,30 @@ protocol VehicleListViewPresenter: AnyObject {
     func didReceiveVehiclesList()
     func didReceiveErrorOnVehiclesListFetch(errorMessage: String)
     func updateViewState(isExpanded: Bool, atIndex index: Int)
+    func didUpdateFilterList()
 }
 
 class VehicleListingViewModel {
     
     //MARK:- Properties
+    /// store the list of all vehicles
     private var vehicles = [Vehicle]()
     weak var viewDelegate: VehicleListViewPresenter?
+    private var selectedMake: String?
+    private var selectedModel: String?
+    /// stores the list of filtered vehicles
+    private var filteredVehicles = [Vehicle]()
+    /// will return true if the filter is selected , else return false
+    private var isFilterApplied: Bool {
+        if selectedMake != nil || selectedModel != nil {
+            return true
+        }
+        return false
+    }
+    ///returns the vehicle list according to filters applied
+    private var vehiclesList: [Vehicle] {
+        return !isFilterApplied ? self.vehicles : self.filteredVehicles
+    }
     
     //MARK:- Initializer
     init(view: VehicleListViewPresenter) {
@@ -53,7 +70,7 @@ class VehicleListingViewModel {
     //MARK:- Data sources
     //returns the number of count of vehicles
     func numberOfSections() -> Int {
-        return vehicles.count
+        return vehiclesList.count
     }
     
     /// returns the number of rows at a section
@@ -70,7 +87,7 @@ class VehicleListingViewModel {
     /// - Parameter section: current section index
     /// - Returns: visual representation of data
     func viewModelForVehicleAt(_ section: Int) -> VehicleDetailViewModel {
-        let viewModel = VehicleDetailViewModel(make: self.vehicles[section].makeName, price: self.vehicles[section].customerPrice, rating: self.vehicles[section].rating, image: self.vehicles[section].image, model: self.vehicles[section].modelName)
+        let viewModel = VehicleDetailViewModel(make: self.vehiclesList[section].makeName, price: self.vehiclesList[section].customerPrice, rating: self.vehiclesList[section].rating, image: self.vehiclesList[section].image, model: self.vehiclesList[section].modelName)
         return viewModel
     }
     
@@ -78,14 +95,14 @@ class VehicleListingViewModel {
     /// - Parameter index: index of view
     /// - Returns: array of string
     func prosListAt(index: Int) -> [String] {
-        return self.vehicles[index].prosList ?? []
+        return self.vehiclesList[index].prosList ?? []
     }
     
     /// returns the cons list at index
     /// - Parameter index: index of view
     /// - Returns: array of string
     func consListAt(index: Int) -> [String] {
-        return self.vehicles[index].consList ?? []
+        return self.vehiclesList[index].consList ?? []
     }
     
     func toggleOpenStateAt(index: Int, lastSelectedIndex: Int) {
@@ -93,9 +110,13 @@ class VehicleListingViewModel {
             //the current selected index is not the same as the previous one, then change the expanded state of previous index
             self.vehicles[lastSelectedIndex].isExpanded = false
         }
-        let isExpanded = self.vehicles[index].isExpanded
-        self.vehicles[index].isExpanded = !isExpanded
-        self.viewDelegate?.updateViewState(isExpanded: self.vehicles[index].isExpanded, atIndex: index)
+        let isExpanded = self.vehiclesList[index].isExpanded
+        if isFilterApplied {
+            filteredVehicles[index].isExpanded = !isExpanded
+        } else {
+            vehicles[index].isExpanded = !isExpanded
+        }
+        self.viewDelegate?.updateViewState(isExpanded: self.vehiclesList[index].isExpanded, atIndex: index)
     }
     
     /// returns the makes of all vehicles in an array
@@ -108,5 +129,29 @@ class VehicleListingViewModel {
     /// - Returns: array of strings
     func modelListOfVehicles() -> [String] {
         return self.vehicles.map {$0.modelName ?? ""}
+    }
+    
+    /// set the selected make value
+    /// - Parameter value: value as string
+    func setSelectedMake(value: String) {
+        self.selectedMake = value
+        filterListOnTheBasisOfMakeAndModel()
+    }
+    
+    /// set the selected model value
+    /// - Parameter value: value as string
+    func setSelectedModel(value: String) {
+        self.selectedModel = value
+        filterListOnTheBasisOfMakeAndModel()
+    }
+    
+    /// Filter the list of vehicles on the basis of their make and model
+    func filterListOnTheBasisOfMakeAndModel() {
+        if selectedMake != nil && selectedModel != nil {
+            self.filteredVehicles = self.vehicles.filter {$0.makeName == selectedMake && $0.modelName == selectedModel}
+        } else if selectedMake != nil || selectedModel != nil {
+            self.filteredVehicles = self.vehicles.filter {$0.makeName == selectedMake || $0.modelName == selectedModel}
+        }
+        self.viewDelegate?.didUpdateFilterList()
     }
 }

@@ -20,14 +20,21 @@ class VehiclesListingViewController: UIViewController {
     
     //MARK:- IBActions
     @IBAction func anyMakeTapped(sender: UIButton) {
+        self.presentActionSheet(withData: viewModel.makesListOfVehicles(), type: .vehicleMake)
     }
     
     @IBAction func anyModelTapped(sender: UIButton) {
+        self.presentActionSheet(withData: viewModel.modelListOfVehicles(), type: .vehicleModel)
     }
     
     //MARK:- Properties
     var viewModel: VehicleListingViewModel!
     private var lastSelectedIndex: Int = 0
+    lazy var customActionSheet: CustomActionSheet = {
+        let actionSheet = CustomActionSheet.loadFromNib()
+        actionSheet.setUpView()
+        return actionSheet
+    }()
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
@@ -53,6 +60,14 @@ class VehiclesListingViewController: UIViewController {
         self.vehiclesTableView.register(footerView, forHeaderFooterViewReuseIdentifier: SeparatorView.reuseIdentifier)
         let prosConsCell = UINib(nibName: VehicleProsConsTableViewCell.reuseIdentifier, bundle: nil)
         self.vehiclesTableView.register(prosConsCell, forCellReuseIdentifier: VehicleProsConsTableViewCell.reuseIdentifier)
+    }
+    
+    //MARK:- Helper Functions
+    private func presentActionSheet(withData data: [String], type: CustomActionSheet.CustomActionSheetContentType) {
+        customActionSheet.initializeWith(data: data, delegateView: self, frame: self.view.frame)
+        customActionSheet.contentType = type
+        self.view.addSubview(customActionSheet)
+        customActionSheet.addActionSheetOnParentViewWith(frame: view.frame, view: view)
     }
 }
 
@@ -112,6 +127,11 @@ extension VehiclesListingViewController: UITableViewDelegate {
 
 //MARK:- VehicleListViewPresenter
 extension VehiclesListingViewController: VehicleListViewPresenter {
+    /// reload tableview with the updated data source
+    func didUpdateFilterList() {
+        self.vehiclesTableView.reloadData()
+    }
+    
     func updateViewState(isExpanded: Bool, atIndex index: Int) {
         let indexSet = IndexSet(integer: index)
         self.vehiclesTableView.reloadSections(indexSet, with: .automatic)
@@ -145,9 +165,15 @@ extension VehiclesListingViewController: CustomActionSheetDelegate {
     
     /// This is called on the click of a row on the action sheet
     /// - Parameter value: value of the item selected
-    func didSelectAnItemFromActionSheet(value: Any) {
-        if let valueAsString = value as? String {
-            self.currentMakeLabel.text = valueAsString
+    func didSelectAnItemFromActionSheet(value: Any, contentType: CustomActionSheet.CustomActionSheetContentType) {
+        let value = "\(value)"
+        switch contentType {
+        case .vehicleMake:
+            self.currentMakeLabel.text = value
+            self.viewModel.setSelectedMake(value: value)
+        case .vehicleModel:
+            self.currentModelLabel.text = value
+            self.viewModel.setSelectedModel(value: value)
         }
     }
 }
