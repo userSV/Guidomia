@@ -101,4 +101,16 @@ class VehicleListingViewModel {
         self.vehicles[index].isExpanded = !isExpanded
         self.viewDelegate?.updateViewState(isExpanded: self.vehicles[index].isExpanded, atIndex: index)
     }
+    
+    /// returns the makes of all vehicles in an array
+    /// - Returns: array of strings
+    func makesListOfVehicles() -> [String] {
+        return self.vehicles.map {$0.makeName ?? ""}
+    }
+    
+    /// returns the models of all vehicles in an array
+    /// - Returns: array of strings
+    func modelListOfVehicles() -> [String] {
+        return self.vehicles.map {$0.modelName ?? ""}
+    }
 }

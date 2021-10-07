@@ -15,6 +15,15 @@ class VehiclesListingViewController: UIViewController {
     @IBOutlet var vehiclesTableView: UITableView!
     @IBOutlet var vehicleMakeFilterView: UIView!
     @IBOutlet var vehicleModelFilterView: UIView!
+    @IBOutlet var currentMakeLabel: UILabel!
+    @IBOutlet var currentModelLabel: UILabel!
+    
+    //MARK:- IBActions
+    @IBAction func anyMakeTapped(sender: UIButton) {
+    }
+    
+    @IBAction func anyModelTapped(sender: UIButton) {
+    }
     
     //MARK:- Properties
     var viewModel: VehicleListingViewModel!
@@ -119,8 +128,24 @@ extension VehiclesListingViewController: VehicleListViewPresenter {
     func didReceiveErrorOnVehiclesListFetch(errorMessage: String) {}
 }
 
+//MARK:- VehicleSectionTapDelegate
 extension VehiclesListingViewController: VehicleSectionTapDelegate {
+    /// calls on the click of a sectionview
+    /// - Parameter index: current index of section
     func didTapOnSectionAt(index: Int) {
         self.viewModel.toggleOpenStateAt(index: index, lastSelectedIndex: lastSelectedIndex)
+    }
+}
+
+//MARK:- CustomActionSheetDelegate
+extension VehiclesListingViewController: CustomActionSheetDelegate {
+    func didCompleteViewPresentation() {
+        self.view.layoutIfNeeded()
+    }
+    
+    func didSelectAnItemFromActionSheet(value: Any) {
+        if let valueAsString = value as? String {
+            self.currentMakeLabel.text = valueAsString
+        }
     }
 }
