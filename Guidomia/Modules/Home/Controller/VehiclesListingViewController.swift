@@ -122,6 +122,11 @@ extension VehiclesListingViewController: UITableViewDelegate {
 
 //MARK:- VehicleListViewPresenter
 extension VehiclesListingViewController: VehicleListViewPresenter {
+    /// reload tableview with the updated data source
+    func didUpdateFilterList() {
+        self.vehiclesTableView.reloadData()
+    }
+    
     func updateViewState(isExpanded: Bool, atIndex index: Int) {
         let indexPath = IndexPath(row: 0, section: index)
         let lastIndexPath = IndexPath(row: 0, section: lastSelectedIndex)
