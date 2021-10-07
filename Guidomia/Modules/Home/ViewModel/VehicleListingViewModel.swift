@@ -77,10 +77,10 @@ class VehicleListingViewModel {
     func numberOfRowsAt(section: Int) -> Int {1}
     
     func isExpanded(section: Int) -> Bool {
-        if self.vehicles[section].prosList == nil && self.vehicles[section].consList == nil {
+        if self.vehiclesList[section].prosList == nil && self.vehiclesList[section].consList == nil {
             return false
         }
-        return vehicles[section].isExpanded
+        return vehiclesList[section].isExpanded
     }
     
     /// returns the vehicle description view model at a particular section
