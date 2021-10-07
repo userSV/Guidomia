@@ -27,14 +27,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMW-KC-V9d">
-                                        <rect key="frame" x="379.5" y="43" width="19.5" height="22"/>
+                                        <rect key="frame" x="369.5" y="38" width="24.5" height="32"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="0.0" maxY="5"/>
                                         <state key="normal" image="menu-white"/>
+                                        <connections>
+                                            <action selector="resetFilterTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJF-FP-k67"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9882352941176471" green="0.37647058823529411" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="LMW-KC-V9d" firstAttribute="centerY" secondItem="2PA-8h-Yg9" secondAttribute="centerY" id="0FO-Fc-SvJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="LMW-KC-V9d" secondAttribute="trailing" constant="15" id="De6-qo-FPG"/>
+                                    <constraint firstAttribute="trailing" secondItem="LMW-KC-V9d" secondAttribute="trailing" constant="20" id="De6-qo-FPG"/>
                                     <constraint firstAttribute="height" constant="88" id="Nmh-nY-Zks"/>
                                     <constraint firstItem="2PA-8h-Yg9" firstAttribute="leading" secondItem="xEP-9f-krQ" secondAttribute="leading" constant="20" id="W5E-AU-zsz"/>
                                     <constraint firstAttribute="bottom" secondItem="2PA-8h-Yg9" secondAttribute="bottom" constant="20" id="eKL-Ov-7fn"/>

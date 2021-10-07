@@ -18,15 +18,6 @@ class VehiclesListingViewController: UIViewController {
     @IBOutlet var currentMakeLabel: UILabel!
     @IBOutlet var currentModelLabel: UILabel!
     
-    //MARK:- IBActions
-    @IBAction func anyMakeTapped(sender: UIButton) {
-        self.presentActionSheet(withData: viewModel.makesListOfVehicles(), type: .vehicleMake)
-    }
-    
-    @IBAction func anyModelTapped(sender: UIButton) {
-        self.presentActionSheet(withData: viewModel.modelListOfVehicles(), type: .vehicleModel)
-    }
-    
     //MARK:- Properties
     var viewModel: VehicleListingViewModel!
     private var lastSelectedIndex: Int = 0
@@ -41,6 +32,25 @@ class VehiclesListingViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.initializeOnLoad()
+    }
+    
+    //MARK:- IBActions
+    @IBAction func anyMakeTapped(sender: UIButton) {
+        self.presentActionSheet(withData: viewModel.makesListOfVehicles(), type: .vehicleMake)
+    }
+    
+    @IBAction func anyModelTapped(sender: UIButton) {
+        self.presentActionSheet(withData: viewModel.modelListOfVehicles(), type: .vehicleModel)
+    }
+    
+    @IBAction func resetFilterTapped(sender: UIButton) {
+        Utility.showAlertWith(message: Constants.VehicleInfo.resetFilter, parentVC: self) {
+            //reset filters and update view
+            self.viewModel.setSelectedMake(value: nil)
+            self.viewModel.setSelectedModel(value: nil)
+            self.currentMakeLabel.text = Constants.VehicleInfo.anyMake
+            self.currentModelLabel.text = Constants.VehicleInfo.anyModel
+        }
     }
     
     //MARK:- Initializer

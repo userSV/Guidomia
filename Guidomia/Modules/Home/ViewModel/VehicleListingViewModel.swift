@@ -133,14 +133,14 @@ class VehicleListingViewModel {
     
     /// set the selected make value
     /// - Parameter value: value as string
-    func setSelectedMake(value: String) {
+    func setSelectedMake(value: String?) {
         self.selectedMake = value
         filterListOnTheBasisOfMakeAndModel()
     }
     
     /// set the selected model value
     /// - Parameter value: value as string
-    func setSelectedModel(value: String) {
+    func setSelectedModel(value: String?) {
         self.selectedModel = value
         filterListOnTheBasisOfMakeAndModel()
     }
@@ -151,6 +151,8 @@ class VehicleListingViewModel {
             self.filteredVehicles = self.vehicles.filter {$0.makeName == selectedMake && $0.modelName == selectedModel}
         } else if selectedMake != nil || selectedModel != nil {
             self.filteredVehicles = self.vehicles.filter {$0.makeName == selectedMake || $0.modelName == selectedModel}
+        } else {
+            self.filteredVehicles.removeAll()
         }
         self.viewDelegate?.didUpdateFilterList()
     }
