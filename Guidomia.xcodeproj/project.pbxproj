@@ -21,6 +21,10 @@
 		A7673812270CB7C7000239FA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673811270CB7C7000239FA /* UIView+Extension.swift */; };
 		A7673814270CB92B000239FA /* VehicleDescriptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */; };
 		A7673816270CB93A000239FA /* VehicleDescriptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */; };
+		A76EA665270DC20600D722BE /* VehicleProsConsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA663270DC20600D722BE /* VehicleProsConsTableViewCell.swift */; };
+		A76EA666270DC20600D722BE /* VehicleProsConsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76EA664270DC20600D722BE /* VehicleProsConsTableViewCell.xib */; };
+		A76EA668270DE7C000D722BE /* ProsConsTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76EA667270DE7C000D722BE /* ProsConsTextView.xib */; };
+		A76EA66A270DE84900D722BE /* ProsConsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EA669270DE84900D722BE /* ProsConsTextView.swift */; };
 		A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E2E660270D534E00DEB77E /* SeparatorView.xib */; };
 		A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E662270D54CA00DEB77E /* SeparatorView.swift */; };
 		A7E2E666270D642A00DEB77E /* VehicleListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */; };
@@ -74,6 +78,10 @@
 		A7673811270CB7C7000239FA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDescriptionHeaderView.swift; sourceTree = "<group>"; };
 		A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleDescriptionHeaderView.xib; sourceTree = "<group>"; };
+		A76EA663270DC20600D722BE /* VehicleProsConsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProsConsTableViewCell.swift; sourceTree = "<group>"; };
+		A76EA664270DC20600D722BE /* VehicleProsConsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleProsConsTableViewCell.xib; sourceTree = "<group>"; };
+		A76EA667270DE7C000D722BE /* ProsConsTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProsConsTextView.xib; sourceTree = "<group>"; };
+		A76EA669270DE84900D722BE /* ProsConsTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProsConsTextView.swift; sourceTree = "<group>"; };
 		A7E2E660270D534E00DEB77E /* SeparatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorView.xib; sourceTree = "<group>"; };
 		A7E2E662270D54CA00DEB77E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListingViewModel.swift; sourceTree = "<group>"; };
@@ -229,10 +237,8 @@
 		A767380E270CB504000239FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */,
-				A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */,
-				A7E2E660270D534E00DEB77E /* SeparatorView.xib */,
-				A7E2E662270D54CA00DEB77E /* SeparatorView.swift */,
+				A76EA660270DC1C200D722BE /* TableViewCell */,
+				A76EA65F270DC1AF00D722BE /* HeaderFooter */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +259,28 @@
 				A7E2E667270D6D4A00DEB77E /* String+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A76EA65F270DC1AF00D722BE /* HeaderFooter */ = {
+			isa = PBXGroup;
+			children = (
+				A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */,
+				A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */,
+				A7E2E660270D534E00DEB77E /* SeparatorView.xib */,
+				A7E2E662270D54CA00DEB77E /* SeparatorView.swift */,
+			);
+			path = HeaderFooter;
+			sourceTree = "<group>";
+		};
+		A76EA660270DC1C200D722BE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A76EA667270DE7C000D722BE /* ProsConsTextView.xib */,
+				A76EA669270DE84900D722BE /* ProsConsTextView.swift */,
+				A76EA663270DC20600D722BE /* VehicleProsConsTableViewCell.swift */,
+				A76EA664270DC20600D722BE /* VehicleProsConsTableViewCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		A7E2E664270D641200DEB77E /* ViewModel */ = {
@@ -399,7 +427,9 @@
 			files = (
 				A7673816270CB93A000239FA /* VehicleDescriptionHeaderView.xib in Resources */,
 				A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */,
+				A76EA666270DC20600D722BE /* VehicleProsConsTableViewCell.xib in Resources */,
 				A76737DC270CA1BB000239FA /* LaunchScreen.storyboard in Resources */,
+				A76EA668270DE7C000D722BE /* ProsConsTextView.xib in Resources */,
 				A76737D9270CA1BB000239FA /* Assets.xcassets in Resources */,
 				A7E2E66D270D80F100DEB77E /* VehicleList.json in Resources */,
 				A76737D4270CA1BA000239FA /* Main.storyboard in Resources */,
@@ -536,11 +566,13 @@
 				A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */,
 				A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */,
 				A76737CD270CA1BA000239FA /* AppDelegate.swift in Sources */,
+				A76EA66A270DE84900D722BE /* ProsConsTextView.swift in Sources */,
 				A7673809270CA692000239FA /* Vehicle.swift in Sources */,
 				A7673814270CB92B000239FA /* VehicleDescriptionHeaderView.swift in Sources */,
 				A76737CF270CA1BA000239FA /* SceneDelegate.swift in Sources */,
 				A7E2E668270D6D4A00DEB77E /* String+Extension.swift in Sources */,
 				A7E2E666270D642A00DEB77E /* VehicleListingViewModel.swift in Sources */,
+				A76EA665270DC20600D722BE /* VehicleProsConsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

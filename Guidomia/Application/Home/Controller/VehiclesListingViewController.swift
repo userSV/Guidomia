@@ -11,13 +11,14 @@ import UIKit
  */
 class VehiclesListingViewController: UIViewController {
 
-    //MARK:- Properties
-    var viewModel: VehicleListingViewModel!
-    
     //MARK:- IBOutlets
     @IBOutlet var vehiclesTableView: UITableView!
     @IBOutlet var vehicleMakeFilterView: UIView!
     @IBOutlet var vehicleModelFilterView: UIView!
+    
+    //MARK:- Properties
+    var viewModel: VehicleListingViewModel!
+    private var lastSelectedIndex: Int = 0
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
@@ -41,6 +42,8 @@ class VehiclesListingViewController: UIViewController {
         let footerView = UINib(nibName: SeparatorView.reuseIdentifier, bundle: nil)
         self.vehiclesTableView.register(headerView, forHeaderFooterViewReuseIdentifier: VehicleDescriptionHeaderView.reuseIdentifier)
         self.vehiclesTableView.register(footerView, forHeaderFooterViewReuseIdentifier: SeparatorView.reuseIdentifier)
+        let prosConsCell = UINib(nibName: VehicleProsConsTableViewCell.reuseIdentifier, bundle: nil)
+        self.vehiclesTableView.register(prosConsCell, forCellReuseIdentifier: VehicleProsConsTableViewCell.reuseIdentifier)
     }
 }
 
@@ -51,10 +54,14 @@ extension VehiclesListingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.numberOfRowsAt(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: VehicleProsConsTableViewCell.reuseIdentifier, for: indexPath) as? VehicleProsConsTableViewCell {
+            cell.setData(prosList: viewModel.prosListAt(index: indexPath.section), consList: viewModel.consListAt(index: indexPath.section))
+            return cell
+        }
         return UITableViewCell()
     }
 }
@@ -69,8 +76,9 @@ extension VehiclesListingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerview = tableView.dequeueReusableHeaderFooterView(withIdentifier: VehicleDescriptionHeaderView.reuseIdentifier) as? VehicleDescriptionHeaderView {
+            headerview.sectionTapDelegate = self
             let headerViewModel = viewModel.viewModelForVehicleAt(section)
-            headerview.setDataWith(viewModel: headerViewModel)
+            headerview.setDataWith(viewModel: headerViewModel, atIndex: section)
             return headerview
         }
         return nil
@@ -82,16 +90,37 @@ extension VehiclesListingViewController: UITableViewDelegate {
         }
         return nil
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { UITableView.automaticDimension }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat { 50 }
 }
 
+//MARK:- VehicleListViewPresenter
 extension VehiclesListingViewController: VehicleListViewPresenter {
+    func updateViewState(isExpanded: Bool, atIndex index: Int) {
+        let indexPath = IndexPath(row: 0, section: index)
+        let lastIndexPath = IndexPath(row: 0, section: lastSelectedIndex)
+        if isExpanded {
+            self.vehiclesTableView.insertRows(at: [indexPath], with: .automatic)
+        } else {
+            //self.vehiclesTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        self.vehiclesTableView.reloadData()
+        lastSelectedIndex = index
+    }
+    
     func didReceiveVehiclesList() {
         DispatchQueue.main.async {
             self.vehiclesTableView.reloadData()
         }
     }
     
-    func didReceiveErrorOnVehiclesListFetch(errorMessage: String) {
-        
+    func didReceiveErrorOnVehiclesListFetch(errorMessage: String) {}
+}
+
+extension VehiclesListingViewController: VehicleSectionTapDelegate {
+    func didTapOnSectionAt(index: Int) {
+        self.viewModel.toggleOpenStateAt(index: index, lastSelectedIndex: lastSelectedIndex)
     }
 }

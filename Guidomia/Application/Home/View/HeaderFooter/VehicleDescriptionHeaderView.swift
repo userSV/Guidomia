@@ -8,22 +8,52 @@
 import UIKit
 import Cosmos
 
+protocol VehicleSectionTapDelegate: AnyObject {
+    func didTapOnSectionAt(index: Int)
+}
+
 class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
 
+    //MARK:- Properties
+    weak var sectionTapDelegate: VehicleSectionTapDelegate!
+    
     //MARK:- IBOutlets
     @IBOutlet var vehicleImageView: UIImageView!
     @IBOutlet var vehicleNameLabel: UILabel!
     @IBOutlet var vehiclePriceLabel: UILabel!
     @IBOutlet var ratingView: CosmosView!
+    @IBOutlet var containerView: UIView!
+    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    private func setTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnView(recognizer:)))
+        tap.numberOfTapsRequired = 1
+        containerView.addGestureRecognizer(tap)
+    }
 
     //MARK:- Set Data
-    func setDataWith(viewModel: VehicleDetailViewModel) {
+    /// set data in the views
+    /// - Parameters:
+    ///   - viewModel: visual representation of data
+    ///   - index: current index of view
+    func setDataWith(viewModel: VehicleDetailViewModel, atIndex index: Int) {
+        self.containerView.tag = index
+        self.setTapGesture()
         self.vehicleNameLabel.text = viewModel.name
         self.vehiclePriceLabel.text = viewModel.displayPrice
         self.ratingView.rating = Double(viewModel.rating ?? 0)
         if let image = viewModel.image {
             self.vehicleImageView.image = UIImage(named: image)
         }
+    }
+    
+    //FIXME:- Fix
+    @objc func didTapOnView(recognizer: UITapGestureRecognizer) {
+        print("tapped")
+        self.sectionTapDelegate.didTapOnSectionAt(index: self.containerView.tag)
     }
 }
 

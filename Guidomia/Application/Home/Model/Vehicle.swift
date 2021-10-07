@@ -18,6 +18,9 @@ struct Vehicle: Decodable {
     var prosList: [String]?
     var image: String?
     
+    /// holds the status of whether the section is exapnded or collapsed
+    var isExpanded: Bool = false
+    
     enum CodingKeys: String, CodingKey {
         case modelName = "model"
         case makeName = "make"
