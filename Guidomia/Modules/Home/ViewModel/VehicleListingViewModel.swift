@@ -57,11 +57,13 @@ class VehicleListingViewModel {
     }
     
     /// returns the number of rows at a section
-    func numberOfRowsAt(section: Int) -> Int {
+    func numberOfRowsAt(section: Int) -> Int {1}
+    
+    func isExpanded(section: Int) -> Bool {
         if self.vehicles[section].prosList == nil && self.vehicles[section].consList == nil {
-            return 0
+            return false
         }
-        return vehicles[section].isExpanded ? 1 : 0
+        return vehicles[section].isExpanded
     }
     
     /// returns the vehicle description view model at a particular section
@@ -89,7 +91,7 @@ class VehicleListingViewModel {
     func toggleOpenStateAt(index: Int, lastSelectedIndex: Int) {
         if index != lastSelectedIndex {
             //the current selected index is not the same as the previous one, then change the expanded state of previous index
-            //self.vehicles[lastSelectedIndex].isExpanded = false
+            self.vehicles[lastSelectedIndex].isExpanded = false
         }
         let isExpanded = self.vehicles[index].isExpanded
         self.vehicles[index].isExpanded = !isExpanded

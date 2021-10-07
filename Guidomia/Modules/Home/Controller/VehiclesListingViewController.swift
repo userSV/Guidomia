@@ -100,7 +100,12 @@ extension VehiclesListingViewController: UITableViewDelegate {
         return nil
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { UITableView.automaticDimension }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if !viewModel.isExpanded(section: indexPath.section) {
+            return 0.00000001
+        }
+        return UITableView.automaticDimension
+    }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat { 50 }
 }
@@ -108,14 +113,8 @@ extension VehiclesListingViewController: UITableViewDelegate {
 //MARK:- VehicleListViewPresenter
 extension VehiclesListingViewController: VehicleListViewPresenter {
     func updateViewState(isExpanded: Bool, atIndex index: Int) {
-        let indexPath = IndexPath(row: 0, section: index)
-        let lastIndexPath = IndexPath(row: 0, section: lastSelectedIndex)
-        if isExpanded {
-            self.vehiclesTableView.insertRows(at: [indexPath], with: .automatic)
-        } else {
-            //self.vehiclesTableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-        self.vehiclesTableView.reloadData()
+        let indexSet = IndexSet(integer: index)
+        self.vehiclesTableView.reloadSections(indexSet, with: .automatic)
         lastSelectedIndex = index
     }
     

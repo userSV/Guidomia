@@ -38,12 +38,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="rmR-Cw-s1C" secondAttribute="bottom" constant="16" id="4Ik-QC-BsU"/>
-                                            <constraint firstItem="kr4-IH-Wvv" firstAttribute="leading" secondItem="9ec-oL-gUI" secondAttribute="leading" constant="40" id="Dja-ua-j4K"/>
-                                            <constraint firstItem="rmR-Cw-s1C" firstAttribute="top" secondItem="kr4-IH-Wvv" secondAttribute="bottom" constant="8" id="HH7-8l-SVk"/>
+                                            <constraint firstAttribute="bottom" secondItem="rmR-Cw-s1C" secondAttribute="bottom" priority="999" constant="16" id="4Ik-QC-BsU"/>
+                                            <constraint firstItem="kr4-IH-Wvv" firstAttribute="leading" secondItem="9ec-oL-gUI" secondAttribute="leading" priority="999" constant="40" id="Dja-ua-j4K"/>
+                                            <constraint firstItem="rmR-Cw-s1C" firstAttribute="top" secondItem="kr4-IH-Wvv" secondAttribute="bottom" priority="999" constant="8" id="HH7-8l-SVk"/>
                                             <constraint firstAttribute="trailing" secondItem="rmR-Cw-s1C" secondAttribute="trailing" constant="25" id="Jyf-BL-Xiv"/>
                                             <constraint firstItem="rmR-Cw-s1C" firstAttribute="leading" secondItem="kr4-IH-Wvv" secondAttribute="leading" constant="14" id="c09-Th-iA1"/>
-                                            <constraint firstItem="kr4-IH-Wvv" firstAttribute="top" secondItem="9ec-oL-gUI" secondAttribute="top" id="w4f-Ud-DwW"/>
+                                            <constraint firstItem="kr4-IH-Wvv" firstAttribute="top" secondItem="9ec-oL-gUI" secondAttribute="top" priority="999" id="w4f-Ud-DwW"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfy-gn-MJ5">
@@ -71,9 +71,9 @@
                                         <constraints>
                                             <constraint firstItem="iRy-1E-040" firstAttribute="leading" secondItem="7XD-S8-2ea" secondAttribute="leading" constant="14" id="850-rG-xVt"/>
                                             <constraint firstAttribute="trailing" secondItem="iRy-1E-040" secondAttribute="trailing" constant="25" id="90x-Np-gHu"/>
-                                            <constraint firstItem="7XD-S8-2ea" firstAttribute="top" secondItem="Kfy-gn-MJ5" secondAttribute="top" id="A51-bX-O47"/>
-                                            <constraint firstItem="iRy-1E-040" firstAttribute="top" secondItem="7XD-S8-2ea" secondAttribute="bottom" constant="8" id="eS6-k9-Vgm"/>
-                                            <constraint firstAttribute="bottom" secondItem="iRy-1E-040" secondAttribute="bottom" constant="19" id="jdh-m0-MPP"/>
+                                            <constraint firstItem="7XD-S8-2ea" firstAttribute="top" secondItem="Kfy-gn-MJ5" secondAttribute="top" priority="999" id="A51-bX-O47"/>
+                                            <constraint firstItem="iRy-1E-040" firstAttribute="top" secondItem="7XD-S8-2ea" secondAttribute="bottom" priority="999" constant="8" id="eS6-k9-Vgm"/>
+                                            <constraint firstAttribute="bottom" secondItem="iRy-1E-040" secondAttribute="bottom" priority="999" constant="19" id="jdh-m0-MPP"/>
                                             <constraint firstItem="7XD-S8-2ea" firstAttribute="leading" secondItem="Kfy-gn-MJ5" secondAttribute="leading" constant="40" id="n2f-Ez-6Yz"/>
                                         </constraints>
                                     </view>
