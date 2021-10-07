@@ -51,14 +51,14 @@ class VehiclesListingViewController: UIViewController {
             self.viewModel.setSelectedModel(value: nil)
             self.currentMakeLabel.text = Constants.VehicleInfo.anyMake
             self.currentModelLabel.text = Constants.VehicleInfo.anyModel
-            self.resetFilterIcon.isHidden = !self.viewModel.isFilterApplied
+            self.resetFilterIcon.isEnabled = self.viewModel.isFilterApplied
         }
     }
     
     //MARK:- Initializer
     private func initializeOnLoad() {
         self.registerNibs()
-        self.resetFilterIcon.isHidden = true
+        self.resetFilterIcon.isEnabled = false
         self.vehicleMakeFilterView.addShadow(offset: CGSize(width: 0, height: 3))
         self.vehicleModelFilterView.addShadow(offset: CGSize(width: 0, height: 3))
         self.viewModel.getVehicleDetails()
@@ -188,6 +188,6 @@ extension VehiclesListingViewController: CustomActionSheetDelegate {
             self.currentModelLabel.text = value
             self.viewModel.setSelectedModel(value: value)
         }
-        resetFilterIcon.isHidden = !viewModel.isFilterApplied
+        resetFilterIcon.isEnabled = viewModel.isFilterApplied
     }
 }
