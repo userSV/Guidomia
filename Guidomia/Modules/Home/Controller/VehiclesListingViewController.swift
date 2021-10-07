@@ -17,6 +17,7 @@ class VehiclesListingViewController: UIViewController {
     @IBOutlet var vehicleModelFilterView: UIView!
     @IBOutlet var currentMakeLabel: UILabel!
     @IBOutlet var currentModelLabel: UILabel!
+    @IBOutlet var resetFilterIcon: UIButton!
     
     //MARK:- Properties
     var viewModel: VehicleListingViewModel!
@@ -50,12 +51,14 @@ class VehiclesListingViewController: UIViewController {
             self.viewModel.setSelectedModel(value: nil)
             self.currentMakeLabel.text = Constants.VehicleInfo.anyMake
             self.currentModelLabel.text = Constants.VehicleInfo.anyModel
+            self.resetFilterIcon.isHidden = !self.viewModel.isFilterApplied
         }
     }
     
     //MARK:- Initializer
     private func initializeOnLoad() {
         self.registerNibs()
+        self.resetFilterIcon.isHidden = true
         self.vehicleMakeFilterView.addShadow(offset: CGSize(width: 0, height: 3))
         self.vehicleModelFilterView.addShadow(offset: CGSize(width: 0, height: 3))
         self.viewModel.getVehicleDetails()
@@ -185,5 +188,6 @@ extension VehiclesListingViewController: CustomActionSheetDelegate {
             self.currentModelLabel.text = value
             self.viewModel.setSelectedModel(value: value)
         }
+        resetFilterIcon.isHidden = !viewModel.isFilterApplied
     }
 }

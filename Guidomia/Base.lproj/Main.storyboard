@@ -21,15 +21,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUIDOMIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PA-8h-Yg9">
-                                        <rect key="frame" x="20" y="40" width="136.5" height="28"/>
-                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
+                                        <rect key="frame" x="20" y="43" width="142" height="29"/>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMW-KC-V9d">
-                                        <rect key="frame" x="369.5" y="38" width="24.5" height="32"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="0.0" maxY="5"/>
-                                        <state key="normal" image="menu-white"/>
+                                        <rect key="frame" x="368" y="42" width="26" height="27"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="refresh"/>
                                         <connections>
                                             <action selector="resetFilterTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJF-FP-k67"/>
                                         </connections>
@@ -37,11 +37,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.9882352941176471" green="0.37647058823529411" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="LMW-KC-V9d" firstAttribute="centerY" secondItem="2PA-8h-Yg9" secondAttribute="centerY" id="0FO-Fc-SvJ"/>
+                                    <constraint firstItem="LMW-KC-V9d" firstAttribute="centerY" secondItem="2PA-8h-Yg9" secondAttribute="centerY" constant="-2" id="0FO-Fc-SvJ"/>
                                     <constraint firstAttribute="trailing" secondItem="LMW-KC-V9d" secondAttribute="trailing" constant="20" id="De6-qo-FPG"/>
                                     <constraint firstAttribute="height" constant="88" id="Nmh-nY-Zks"/>
                                     <constraint firstItem="2PA-8h-Yg9" firstAttribute="leading" secondItem="xEP-9f-krQ" secondAttribute="leading" constant="20" id="W5E-AU-zsz"/>
-                                    <constraint firstAttribute="bottom" secondItem="2PA-8h-Yg9" secondAttribute="bottom" constant="20" id="eKL-Ov-7fn"/>
+                                    <constraint firstAttribute="bottom" secondItem="2PA-8h-Yg9" secondAttribute="bottom" constant="16" id="eKL-Ov-7fn"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="W0X-nX-RGD">
@@ -226,6 +226,7 @@
                     <connections>
                         <outlet property="currentMakeLabel" destination="SR4-QY-yc9" id="p1p-dL-XAQ"/>
                         <outlet property="currentModelLabel" destination="pHc-zo-zSm" id="nBy-SX-YZK"/>
+                        <outlet property="resetFilterIcon" destination="LMW-KC-V9d" id="T2I-qs-IaP"/>
                         <outlet property="vehicleMakeFilterView" destination="gy4-0E-Xnu" id="VXD-YJ-Dsp"/>
                         <outlet property="vehicleModelFilterView" destination="alx-hn-t08" id="vRV-NA-aDl"/>
                         <outlet property="vehiclesTableView" destination="W0X-nX-RGD" id="Bjs-P9-crd"/>
@@ -238,7 +239,7 @@
     </scenes>
     <resources>
         <image name="Tacoma" width="2736" height="1824"/>
-        <image name="menu-white" width="19.5" height="16.5"/>
+        <image name="refresh" width="21" height="21"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

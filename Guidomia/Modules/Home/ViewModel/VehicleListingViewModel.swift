@@ -25,7 +25,7 @@ class VehicleListingViewModel {
     /// stores the list of filtered vehicles
     private var filteredVehicles = [Vehicle]()
     /// will return true if the filter is selected , else return false
-    private var isFilterApplied: Bool {
+    var isFilterApplied: Bool {
         if selectedMake != nil || selectedModel != nil {
             return true
         }
