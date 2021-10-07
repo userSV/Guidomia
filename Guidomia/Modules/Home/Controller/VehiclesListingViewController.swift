@@ -69,10 +69,14 @@ class VehiclesListingViewController: UIViewController {
     private func registerNibs() {
         let headerView = UINib(nibName: VehicleDescriptionHeaderView.reuseIdentifier, bundle: nil)
         let footerView = UINib(nibName: SeparatorView.reuseIdentifier, bundle: nil)
-        self.vehiclesTableView.register(headerView, forHeaderFooterViewReuseIdentifier: VehicleDescriptionHeaderView.reuseIdentifier)
-        self.vehiclesTableView.register(footerView, forHeaderFooterViewReuseIdentifier: SeparatorView.reuseIdentifier)
-        let prosConsCell = UINib(nibName: VehicleProsConsTableViewCell.reuseIdentifier, bundle: nil)
-        self.vehiclesTableView.register(prosConsCell, forCellReuseIdentifier: VehicleProsConsTableViewCell.reuseIdentifier)
+        self.vehiclesTableView.register(headerView,
+                                        forHeaderFooterViewReuseIdentifier: VehicleDescriptionHeaderView.reuseIdentifier)
+        self.vehiclesTableView.register(footerView,
+                                        forHeaderFooterViewReuseIdentifier: SeparatorView.reuseIdentifier)
+        let prosConsCell = UINib(nibName: VehicleProsConsTableViewCell.reuseIdentifier,
+                                 bundle: nil)
+        self.vehiclesTableView.register(prosConsCell,
+                                        forCellReuseIdentifier: VehicleProsConsTableViewCell.reuseIdentifier)
     }
     
     //MARK:- Helper Functions
@@ -86,6 +90,7 @@ class VehiclesListingViewController: UIViewController {
 
 //MARK:- UITableViewDataSource
 extension VehiclesListingViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
@@ -105,6 +110,7 @@ extension VehiclesListingViewController: UITableViewDataSource {
 
 //MARK:- UITableViewDelegate
 extension VehiclesListingViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { UITableView.automaticDimension }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat { 100 }
@@ -139,7 +145,8 @@ extension VehiclesListingViewController: UITableViewDelegate {
 }
 
 //MARK:- VehicleListViewPresenter
-extension VehiclesListingViewController: VehicleListViewPresenter {
+extension VehiclesListingViewController: VehicleListViewDelegate {
+    
     /// reload tableview with the updated data source
     func didUpdateFilterList() {
         self.vehiclesTableView.reloadData()
@@ -157,11 +164,18 @@ extension VehiclesListingViewController: VehicleListViewPresenter {
         }
     }
     
-    func didReceiveErrorOnVehiclesListFetch(errorMessage: String) {}
+    func didReceiveErrorOnVehiclesListFetch(errorMessage: String) {
+        DispatchQueue.main.async {
+            Utility.showAlertWith(message: errorMessage
+                                  , parentVC: self,
+                                  hasSingleAction: true) {}
+        }
+    }
 }
 
 //MARK:- VehicleSectionTapDelegate
 extension VehiclesListingViewController: VehicleSectionTapDelegate {
+    
     /// calls on the click of a sectionview
     /// - Parameter index: current index of section
     func didTapOnSectionAt(index: Int) {
@@ -171,6 +185,7 @@ extension VehiclesListingViewController: VehicleSectionTapDelegate {
 
 //MARK:- CustomActionSheetDelegate
 extension VehiclesListingViewController: CustomActionSheetDelegate {
+    
     /// this method call updates any layout changes
     func didCompleteViewPresentation() {
         self.view.layoutIfNeeded()

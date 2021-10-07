@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol VehicleListViewPresenter: AnyObject {
+protocol VehicleListViewDelegate: AnyObject {
     func didReceiveVehiclesList()
     func didReceiveErrorOnVehiclesListFetch(errorMessage: String)
     func updateViewState(isExpanded: Bool, atIndex index: Int)
@@ -19,7 +19,7 @@ class VehicleListingViewModel {
     //MARK:- Properties
     /// store the list of all vehicles
     private var vehicles = [Vehicle]()
-    weak var viewDelegate: VehicleListViewPresenter?
+    weak var viewDelegate: VehicleListViewDelegate?
     private var selectedMake: String?
     private var selectedModel: String?
     /// stores the list of filtered vehicles
@@ -37,7 +37,7 @@ class VehicleListingViewModel {
     }
     
     //MARK:- Initializer
-    init(view: VehicleListViewPresenter) {
+    init(view: VehicleListViewDelegate) {
         self.viewDelegate = view
     }
     
@@ -45,10 +45,15 @@ class VehicleListingViewModel {
     /// fetch the details from json file
     func getVehicleDetails() {
         DispatchQueue.global().async {
-            if var vehicles = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: Constants.JsonFile.jsonExtension) {
-                let filteredList = self.filterProsConsList(vehicles: &vehicles)
-                self.vehicles.append(contentsOf: filteredList)
-                self.viewDelegate?.didReceiveVehiclesList()
+            if let result = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: Constants.JsonFile.jsonExtension) {
+                switch result {
+                case .success(var vehicles):
+                    let filteredList = self.filterProsConsList(vehicles: &vehicles)
+                    self.vehicles.append(contentsOf: filteredList)
+                    self.viewDelegate?.didReceiveVehiclesList()
+                case .failure(let error):
+                    self.viewDelegate?.didReceiveErrorOnVehiclesListFetch(errorMessage: error.localizedDescription)
+                }
             }
         }
     }

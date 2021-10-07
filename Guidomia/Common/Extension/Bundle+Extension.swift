@@ -13,18 +13,19 @@ extension Bundle {
     ///   - type: Custom data type into which the data is decoded
     ///   - file: name of the file
     ///   - fileExtension: extension of the file
-    /// - Returns: <#description#>
-    func decode<T: Decodable>(_ type: T.Type, from file: String, fileExtension: String) -> T? {
+    /// - Returns: Result type with success or error
+    func decode<T: Decodable>(_ type: T.Type, from file: String, fileExtension: String) -> Result<T, Error>? {
         guard let url = self.url(forResource: file, withExtension: fileExtension),
               let data = try? Data(contentsOf: url) else {
-            fatalError("Failed to locate \(file) in bundle.")
+            let errorMessage = Constants.AppMessages.errorInLocatingFile
+            return .failure(Constants.CustomError.errorInDecodingData(error: errorMessage))
         }
         let decoder = JSONDecoder()
         do {
-            return try decoder.decode(T.self, from: data)
+            let decodedData = try decoder.decode(T.self, from: data)
+            return .success(decodedData)
         } catch(let error) {
-            print(error.localizedDescription)
+            return .failure(Constants.CustomError.errorInDecodingData(error: error.localizedDescription))
         }
-        return nil
     }
 }

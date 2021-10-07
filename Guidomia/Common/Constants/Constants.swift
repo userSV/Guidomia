@@ -24,4 +24,12 @@ struct Constants {
         static let vehicleList = "VehicleList"
         static let jsonExtension = "json"
     }
+    
+    struct AppMessages {
+        static let errorInLocatingFile = "Failed to locate file in bundle."
+    }
+    
+    enum CustomError: Error {
+        case errorInDecodingData(error: String)
+    }
 }
