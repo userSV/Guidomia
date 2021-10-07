@@ -26,18 +26,11 @@ class VehicleListingViewModel {
     
     //MARK:- Helper Functions
     func getVehicleDetails() {
-        let decoder = JSONDecoder()
         DispatchQueue.global().async {
-            do {
-                if let url = Bundle.main.url(forResource: "VehicleList", withExtension: "json") {
-                    let data = try Data(contentsOf: url)
-                    var vehicles = try decoder.decode([Vehicle].self, from: data)
-                    let filteredList = self.filterProsConsList(vehicles: &vehicles)
-                    self.vehicles.append(contentsOf: filteredList)
-                    self.viewDelegate?.didReceiveVehiclesList()
-                }
-            } catch(let error) {
-                self.viewDelegate?.didReceiveErrorOnVehiclesListFetch(errorMessage: error.localizedDescription)
+            if var vehicles = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: "json") {
+                let filteredList = self.filterProsConsList(vehicles: &vehicles)
+                self.vehicles.append(contentsOf: filteredList)
+                self.viewDelegate?.didReceiveVehiclesList()
             }
         }
     }

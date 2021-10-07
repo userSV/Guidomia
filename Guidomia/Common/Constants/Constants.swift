@@ -13,4 +13,8 @@ struct Constants {
         static let anyMake = "Any make"
         static let anyModel = "Any model"
     }
+    
+    struct JsonFile {
+        static let vehicleList = "VehicleList"
+    }
 }
