@@ -20,14 +20,21 @@ class VehiclesListingViewController: UIViewController {
     
     //MARK:- IBActions
     @IBAction func anyMakeTapped(sender: UIButton) {
+        self.presentActionSheet(withData: viewModel.makesListOfVehicles())
     }
     
     @IBAction func anyModelTapped(sender: UIButton) {
+        self.presentActionSheet(withData: viewModel.modelListOfVehicles())
     }
     
     //MARK:- Properties
     var viewModel: VehicleListingViewModel!
     private var lastSelectedIndex: Int = 0
+    lazy var customActionSheet: CustomActionSheet = {
+        let actionSheet = CustomActionSheet.loadFromNib()
+        actionSheet.setUpView()
+        return actionSheet
+    }()
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
@@ -53,6 +60,13 @@ class VehiclesListingViewController: UIViewController {
         self.vehiclesTableView.register(footerView, forHeaderFooterViewReuseIdentifier: SeparatorView.reuseIdentifier)
         let prosConsCell = UINib(nibName: VehicleProsConsTableViewCell.reuseIdentifier, bundle: nil)
         self.vehiclesTableView.register(prosConsCell, forCellReuseIdentifier: VehicleProsConsTableViewCell.reuseIdentifier)
+    }
+    
+    //MARK:- Helper Functions
+    private func presentActionSheet(withData data: [String]) {
+        customActionSheet.initializeWith(data: data, delegateView: self, frame: self.view.frame)
+        self.view.addSubview(customActionSheet)
+        customActionSheet.addActionSheetOnParentViewWith(frame: view.frame, view: view)
     }
 }
 

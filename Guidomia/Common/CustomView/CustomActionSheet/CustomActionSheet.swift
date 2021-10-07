@@ -24,18 +24,26 @@ class CustomActionSheet: UIView {
     private var dataSource = [String]()
     private let rowHeight: CGFloat = 44
     weak var delegate: CustomActionSheetDelegate?
+    enum CustomActionSheetContentType {
+        case vehicleMake, vehicleModel
+    }
     
     //MARK:- Initialize
     /// set up the view and provide data source
     /// - Parameter data: array of strings
-    func initializeWith(data: [String], delegateView: CustomActionSheetDelegate) {
+    func initializeWith(data: [String], delegateView: CustomActionSheetDelegate, frame: CGRect) {
+        self.frame = CGRect(x: 0, y: frame.height, width: frame.width, height: frame.height)
         self.dataSource = data
         self.delegate = delegateView
+        self.fadedView.alpha = 0
+        tableViewHeightConstraint.constant = CGFloat(self.dataSource.count * 44)
+        tableView.reloadData()
+    }
+    
+    func setUpView() {
         self.addTapGesture()
         let nib = UINib(nibName: ActionSheetTableViewCell.reuseIdentifier, bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: ActionSheetTableViewCell.reuseIdentifier)
-        self.fadedView.alpha = 0
-        tableViewHeightConstraint.constant = CGFloat(self.dataSource.count * 44)
     }
     
     //MARK:- Helper Functions
@@ -86,6 +94,7 @@ extension CustomActionSheet: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ActionSheetTableViewCell.reuseIdentifier, for: indexPath) as? ActionSheetTableViewCell {
+            cell.selectionStyle = .none
             cell.setData(dataSource[indexPath.row])
             return cell
         }
