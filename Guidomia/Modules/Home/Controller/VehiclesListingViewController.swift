@@ -159,11 +159,14 @@ extension VehiclesListingViewController: CustomActionSheetDelegate {
     }
     
     func didSelectAnItemFromActionSheet(value: Any, contentType: CustomActionSheet.CustomActionSheetContentType) {
+        let value = "\(value)"
         switch contentType {
         case .vehicleMake:
-            self.currentMakeLabel.text = "\(value)"
+            self.currentMakeLabel.text = value
+            self.viewModel.setSelectedMake(value: value)
         case .vehicleModel:
-            self.currentModelLabel.text = "\(value)"
+            self.currentModelLabel.text = value
+            self.viewModel.setSelectedModel(value: value)
         }
     }
 }

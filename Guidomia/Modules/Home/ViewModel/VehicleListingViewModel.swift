@@ -18,6 +18,8 @@ class VehicleListingViewModel {
     //MARK:- Properties
     private var vehicles = [Vehicle]()
     weak var viewDelegate: VehicleListViewPresenter?
+    private var selectedMake: String?
+    private var selectedModel: String?
     
     //MARK:- Initializer
     init(view: VehicleListViewPresenter) {
@@ -112,5 +114,21 @@ class VehicleListingViewModel {
     /// - Returns: array of strings
     func modelListOfVehicles() -> [String] {
         return self.vehicles.map {$0.modelName ?? ""}
+    }
+    
+    /// set the selected make value
+    /// - Parameter value: value as string
+    func setSelectedMake(value: String) {
+        self.selectedMake = value
+    }
+    
+    /// set the selected model value
+    /// - Parameter value: value as string
+    func setSelectedModel(value: String) {
+        self.selectedModel = value
+    }
+    
+    func filterListOnTheBasisOfMakeAndModel() {
+        
     }
 }
