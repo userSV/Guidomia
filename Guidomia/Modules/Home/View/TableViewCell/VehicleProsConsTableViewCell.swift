@@ -21,8 +21,6 @@ class VehicleProsConsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        //self.prosViews.removeAll()
-       // self.consViews.removeAll()
         prosViews.forEach { view in
             view.removeFromSuperview()
         }

@@ -139,10 +139,13 @@ extension VehiclesListingViewController: VehicleSectionTapDelegate {
 
 //MARK:- CustomActionSheetDelegate
 extension VehiclesListingViewController: CustomActionSheetDelegate {
+    /// this method call updates any layout changes
     func didCompleteViewPresentation() {
         self.view.layoutIfNeeded()
     }
     
+    /// This is called on the click of a row on the action sheet
+    /// - Parameter value: value of the item selected
     func didSelectAnItemFromActionSheet(value: Any) {
         if let valueAsString = value as? String {
             self.currentMakeLabel.text = valueAsString

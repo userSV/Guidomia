@@ -24,4 +24,14 @@ extension String {
         }
         return nil
     }
+    
+    /// concatenate the current string with other
+    /// - Parameters:
+    ///   - separator: separator string for eg. " "
+    ///   - list: array of other strings to add
+    /// - Returns: The concatenated string
+    func concatenateWith(separator: String, list: [String]) -> String {
+        let stringToAdd = list.joined(separator: separator)
+        return stringToAdd != "" ? self + separator + stringToAdd : self
+    }
 }

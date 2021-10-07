@@ -57,6 +57,7 @@ class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
     }
 }
 
+/// View Model with vehicle data
 struct VehicleDetailViewModel {
     var make: String?
     var price: Double?
@@ -74,10 +75,11 @@ struct VehicleDetailViewModel {
         return "\(Constants.VehicleInfo.priceText) : 0"
     }
     
+    /// display name by concatenating make and model
     var name: String {
         if let make = make,
            let model = model {
-            return make + " " + model
+            return make.concatenateWith(separator: " ", list: [model])
         }
         return ""
     }
