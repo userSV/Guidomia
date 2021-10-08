@@ -20,7 +20,7 @@ class VehiclesListingViewController: UIViewController {
     @IBOutlet var resetFilterIcon: UIButton!
     
     //MARK:- Properties
-    var viewModel: VehicleListingViewModel!
+    var viewModel = VehicleListingViewModel()
     private var lastSelectedIndex: Int = 0
     lazy var customActionSheet: CustomActionSheet = {
         let actionSheet = CustomActionSheet.loadFromNib()
@@ -57,6 +57,7 @@ class VehiclesListingViewController: UIViewController {
     
     //MARK:- Initializer
     private func initializeOnLoad() {
+        self.viewModel.initializeWith(delegate: self)
         self.registerNibs()
         self.resetFilterIcon.isEnabled = false
         self.vehicleMakeFilterView.addShadow(offset: CGSize(width: 0, height: 3))

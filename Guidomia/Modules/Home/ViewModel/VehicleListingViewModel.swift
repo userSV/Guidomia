@@ -37,8 +37,8 @@ class VehicleListingViewModel {
     }
     
     //MARK:- Initializer
-    init(view: VehicleListViewDelegate) {
-        self.viewDelegate = view
+    func initializeWith(delegate: VehicleListViewDelegate) {
+        self.viewDelegate = delegate
     }
     
     //MARK:- Helper Functions
