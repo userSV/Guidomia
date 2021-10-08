@@ -16,8 +16,8 @@ class VehicleProsConsTableViewCell: UITableViewCell {
     @IBOutlet var consLabelContainerStackView: UIStackView!
     
     //MARK:- Properties
-    private var prosViews = [ProsConsTextView]()
-    private var consViews = [ProsConsTextView]()
+    private var prosViews = [ProsConsView]()
+    private var consViews = [ProsConsView]()
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -54,7 +54,7 @@ class VehicleProsConsTableViewCell: UITableViewCell {
             prosViews[index].removeFromSuperview()
         }
         for index in 0..<pros.count {
-            self.prosViews.append(ProsConsTextView.loadFromNib())
+            self.prosViews.append(ProsConsView.loadFromNib())
             prosViews[index].setContent(pros[index])
             self.prosLabelContainerStackView.addArrangedSubview(prosViews[index])
         }
@@ -68,7 +68,7 @@ class VehicleProsConsTableViewCell: UITableViewCell {
             consViews[index].removeFromSuperview()
         }
         for index in 0..<cons.count {
-            self.consViews.append(ProsConsTextView.loadFromNib())
+            self.consViews.append(ProsConsView.loadFromNib())
             consViews[index].setContent(cons[index])
             self.consLabelContainerStackView.addArrangedSubview(consViews[index])
         }

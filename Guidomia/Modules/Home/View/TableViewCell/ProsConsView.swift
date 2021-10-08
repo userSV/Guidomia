@@ -1,5 +1,5 @@
 //
-//  ProsConsTextView.swift
+//  ProsConsView.swift
 //  Guidomia
 //
 //  Created by Shilpa on 06/10/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProsConsTextView: UIView {
+class ProsConsView: UIView {
 
     //MARK:- IBOutlets
     @IBOutlet var prosConsTextLabel: UILabel!
@@ -15,8 +15,8 @@ class ProsConsTextView: UIView {
     //MARK:- Helper functions
     /// class function to load the nib in another view
     /// - Returns: The current view class
-    class func loadFromNib() -> ProsConsTextView {
-        return UINib(nibName: ProsConsTextView.reuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ProsConsTextView
+    class func loadFromNib() -> ProsConsView {
+        return UINib(nibName: ProsConsView.reuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ProsConsView
     }
     
     //MARK:- Initializer
