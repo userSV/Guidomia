@@ -7,8 +7,12 @@
 
 import UIKit
 
+enum CustomActionSheetContentType {
+    case vehicleMake, vehicleModel
+}
+
 protocol CustomActionSheetDelegate: AnyObject {
-    func didSelectAnItemFromActionSheet(value: Any, contentType: CustomActionSheet.CustomActionSheetContentType)
+    func didSelectAnItemFromActionSheet(value: Any, contentType: CustomActionSheetContentType)
     func didCompleteViewPresentation()
 }
 
@@ -25,9 +29,6 @@ class CustomActionSheet: UIView {
     private let rowHeight: CGFloat = 44.0
     weak var delegate: CustomActionSheetDelegate?
     var contentType: CustomActionSheetContentType = .vehicleMake
-    enum CustomActionSheetContentType {
-        case vehicleMake, vehicleModel
-    }
     
     //MARK:- Initialize
     /// set up the view and provide data source

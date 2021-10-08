@@ -81,7 +81,7 @@ class VehiclesListingViewController: UIViewController {
     }
     
     //MARK:- Helper Functions
-    private func presentActionSheet(withData data: [String], type: CustomActionSheet.CustomActionSheetContentType) {
+    private func presentActionSheet(withData data: [String], type: CustomActionSheetContentType) {
         customActionSheet.initializeWith(data: data, delegateView: self, frame: self.view.frame)
         customActionSheet.contentType = type
         self.view.addSubview(customActionSheet)
@@ -93,11 +93,11 @@ class VehiclesListingViewController: UIViewController {
 extension VehiclesListingViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections()
+        return viewModel.numberOfVehicles()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRowsAt(section: section)
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,7 +136,7 @@ extension VehiclesListingViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if !viewModel.isExpanded(section: indexPath.section) {
+        if !viewModel.isExpanded(index: indexPath.section) {
             return 0.00000001
         }
         return UITableView.automaticDimension
@@ -194,7 +194,7 @@ extension VehiclesListingViewController: CustomActionSheetDelegate {
     
     /// This is called on the click of a row on the action sheet
     /// - Parameter value: value of the item selected
-    func didSelectAnItemFromActionSheet(value: Any, contentType: CustomActionSheet.CustomActionSheetContentType) {
+    func didSelectAnItemFromActionSheet(value: Any, contentType: CustomActionSheetContentType) {
         let value = "\(value)"
         switch contentType {
         case .vehicleMake:

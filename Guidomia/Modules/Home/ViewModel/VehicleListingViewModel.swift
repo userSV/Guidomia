@@ -71,66 +71,6 @@ class VehicleListingViewModel {
         return vehicles
     }
     
-    //MARK:- Data sources
-    //returns the number of count of vehicles
-    func numberOfSections() -> Int {
-        return vehiclesList.count
-    }
-    
-    /// returns the number of rows at a section
-    func numberOfRowsAt(section: Int) -> Int {1}
-    
-    func isExpanded(section: Int) -> Bool {
-        
-        if self.vehiclesList[section].prosList == nil && self.vehiclesList[section].consList == nil {
-            return false
-        }
-        return vehiclesList[section].isExpanded
-    }
-    
-    /// returns the vehicle description view model at a particular section
-    /// - Parameter section: current section index
-    /// - Returns: visual representation of data
-    func viewModelForVehicleAt(_ section: Int) -> VehicleDetailViewModel {
-        
-        let viewModel = VehicleDetailViewModel(make: self.vehiclesList[section].makeName,
-                                               price: self.vehiclesList[section].customerPrice,
-                                               rating: self.vehiclesList[section].rating,
-                                               image: self.vehiclesList[section].image,
-                                               model: self.vehiclesList[section].modelName)
-        return viewModel
-    }
-    
-    /// returns the pros list at index
-    /// - Parameter index: index of view
-    /// - Returns: array of string
-    func prosListAt(index: Int) -> [String] {
-        return self.vehiclesList[index].prosList ?? []
-    }
-    
-    /// returns the cons list at index
-    /// - Parameter index: index of view
-    /// - Returns: array of string
-    func consListAt(index: Int) -> [String] {
-        return self.vehiclesList[index].consList ?? []
-    }
-    
-    func toggleOpenStateAt(index: Int, lastSelectedIndex: Int) {
-        if index != lastSelectedIndex {
-            // the current selected index is not the same as the previous one
-            // change the expanded state of previous index
-            self.vehicles[lastSelectedIndex].isExpanded = false
-        }
-        let isExpanded = self.vehiclesList[index].isExpanded
-        if isFilterApplied {
-            filteredVehicles[index].isExpanded = !isExpanded
-        } else {
-            vehicles[index].isExpanded = !isExpanded
-        }
-        self.viewDelegate?.updateViewState(isExpanded: self.vehiclesList[index].isExpanded,
-                                           atIndex: index)
-    }
-    
     /// returns the makes of all vehicles in an array
     /// - Returns: array of strings
     func makesListOfVehicles() -> [String] {
@@ -167,5 +107,72 @@ class VehicleListingViewModel {
             self.filteredVehicles.removeAll()
         }
         self.viewDelegate?.didUpdateFilterList()
+    }
+}
+
+//MARK:- Data sources
+extension VehicleListingViewModel {
+    
+    // returns the number of count of vehicles
+    func numberOfVehicles() -> Int {
+        return vehiclesList.count
+    }
+    
+    /// will return true if the vehicle has pros and/or cons , else return false
+    /// - Parameter index: current index of the vehicle
+    /// - Returns: true or false
+    func isExpanded(index: Int) -> Bool {
+        
+        if self.vehiclesList[index].prosList == nil && self.vehiclesList[index].consList == nil {
+            return false
+        }
+        return vehiclesList[index].isExpanded
+    }
+    
+    /// returns the vehicle description view model at a particular section
+    /// - Parameter index: current section index
+    /// - Returns: visual representation of data
+    func viewModelForVehicleAt(_ index: Int) -> VehicleDetailViewModel {
+        
+        let viewModel = VehicleDetailViewModel(make: self.vehiclesList[index].makeName,
+                                               price: self.vehiclesList[index].customerPrice,
+                                               rating: self.vehiclesList[index].rating,
+                                               image: self.vehiclesList[index].image,
+                                               model: self.vehiclesList[index].modelName)
+        return viewModel
+    }
+    
+    /// returns the pros list at index
+    /// - Parameter index: index of view
+    /// - Returns: array of string
+    func prosListAt(index: Int) -> [String] {
+        return self.vehiclesList[index].prosList ?? []
+    }
+    
+    /// returns the cons list at index
+    /// - Parameter index: index of view
+    /// - Returns: array of string
+    func consListAt(index: Int) -> [String] {
+        return self.vehiclesList[index].consList ?? []
+    }
+    
+    /// Changes the state of expanded from true to false or vice-versa
+    /// - Parameters:
+    ///   - index: current index
+    ///   - lastSelectedIndex: previous selected index
+    func toggleOpenStateAt(index: Int, lastSelectedIndex: Int) {
+        if index != lastSelectedIndex {
+            // the current selected index is not the same as the previous one
+            // change the expanded state of previous index
+            self.vehicles[lastSelectedIndex].isExpanded = false
+        }
+        let isExpanded = self.vehiclesList[index].isExpanded
+        if isFilterApplied {
+            filteredVehicles[index].isExpanded = !isExpanded
+        } else {
+            vehicles[index].isExpanded = !isExpanded
+        }
+        self.viewDelegate?.updateViewState(isExpanded: self.vehiclesList[index].isExpanded,
+                                           atIndex: index)
     }
 }
