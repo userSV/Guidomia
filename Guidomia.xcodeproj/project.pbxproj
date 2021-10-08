@@ -30,8 +30,10 @@
 		A7A1236D270EB88E002BEDCB /* ActionSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1236B270EB88E002BEDCB /* ActionSheetTableViewCell.swift */; };
 		A7A1236E270EB88E002BEDCB /* ActionSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A1236C270EB88E002BEDCB /* ActionSheetTableViewCell.xib */; };
 		A7A12370270EDC18002BEDCB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1236F270EDC18002BEDCB /* Bundle+Extension.swift */; };
-		A7A12373270F1F67002BEDCB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A12372270F1F67002BEDCB /* Utility.swift */; };
 		A7B12C922710013600DE0D76 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C912710013600DE0D76 /* UITableView+Extension.swift */; };
+		A7B12C972710095300DE0D76 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B12C962710095300DE0D76 /* NavigationBarView.xib */; };
+		A7B12C9B27100C2700DE0D76 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C9A27100C2700DE0D76 /* NavigationBarView.swift */; };
+		A7B12C9E27100E7900DE0D76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C9D27100E7900DE0D76 /* BaseViewController.swift */; };
 		A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E2E660270D534E00DEB77E /* SeparatorView.xib */; };
 		A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E662270D54CA00DEB77E /* SeparatorView.swift */; };
 		A7E2E666270D642A00DEB77E /* VehicleListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */; };
@@ -94,8 +96,10 @@
 		A7A1236B270EB88E002BEDCB /* ActionSheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetTableViewCell.swift; sourceTree = "<group>"; };
 		A7A1236C270EB88E002BEDCB /* ActionSheetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionSheetTableViewCell.xib; sourceTree = "<group>"; };
 		A7A1236F270EDC18002BEDCB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
-		A7A12372270F1F67002BEDCB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A7B12C912710013600DE0D76 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		A7B12C962710095300DE0D76 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
+		A7B12C9A27100C2700DE0D76 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		A7B12C9D27100E7900DE0D76 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A7E2E660270D534E00DEB77E /* SeparatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorView.xib; sourceTree = "<group>"; };
 		A7E2E662270D54CA00DEB77E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListingViewModel.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		A76737FF270CA50F000239FA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A7B12C9C27100E6600DE0D76 /* Base */,
 				A7673800270CA517000239FA /* Home */,
 			);
 			path = Modules;
@@ -260,7 +265,6 @@
 		A767380F270CB7A9000239FA /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A7A12371270F1F56002BEDCB /* Utility */,
 				A7A12369270EB855002BEDCB /* CustomView */,
 				A7E2E670270DA38E00DEB77E /* Constants */,
 				A7673810270CB7B5000239FA /* Extension */,
@@ -304,6 +308,7 @@
 		A7A12369270EB855002BEDCB /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				A7B12C952710093100DE0D76 /* NavigationBar */,
 				A7A1236A270EB862002BEDCB /* CustomActionSheet */,
 			);
 			path = CustomView;
@@ -320,12 +325,21 @@
 			path = CustomActionSheet;
 			sourceTree = "<group>";
 		};
-		A7A12371270F1F56002BEDCB /* Utility */ = {
+		A7B12C952710093100DE0D76 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				A7A12372270F1F67002BEDCB /* Utility.swift */,
+				A7B12C962710095300DE0D76 /* NavigationBarView.xib */,
+				A7B12C9A27100C2700DE0D76 /* NavigationBarView.swift */,
 			);
-			path = Utility;
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		A7B12C9C27100E6600DE0D76 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A7B12C9D27100E7900DE0D76 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		A7E2E664270D641200DEB77E /* ViewModel */ = {
@@ -478,6 +492,7 @@
 				A7A12365270EB5CF002BEDCB /* CustomActionSheet.xib in Resources */,
 				A76EA668270DE7C000D722BE /* ProsConsView.xib in Resources */,
 				A76737D9270CA1BB000239FA /* Assets.xcassets in Resources */,
+				A7B12C972710095300DE0D76 /* NavigationBarView.xib in Resources */,
 				A7E2E66D270D80F100DEB77E /* VehicleList.json in Resources */,
 				A76737D4270CA1BA000239FA /* Main.storyboard in Resources */,
 			);
@@ -612,6 +627,7 @@
 				A76737D7270CA1BA000239FA /* Guidomia.xcdatamodeld in Sources */,
 				A7A12370270EDC18002BEDCB /* Bundle+Extension.swift in Sources */,
 				A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */,
+				A7B12C9E27100E7900DE0D76 /* BaseViewController.swift in Sources */,
 				A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */,
 				A76737CD270CA1BA000239FA /* AppDelegate.swift in Sources */,
 				A7A1236D270EB88E002BEDCB /* ActionSheetTableViewCell.swift in Sources */,
@@ -624,7 +640,7 @@
 				A7E2E668270D6D4A00DEB77E /* String+Extension.swift in Sources */,
 				A7E2E666270D642A00DEB77E /* VehicleListingViewModel.swift in Sources */,
 				A76EA665270DC20600D722BE /* VehicleProsConsTableViewCell.swift in Sources */,
-				A7A12373270F1F67002BEDCB /* Utility.swift in Sources */,
+				A7B12C9B27100C2700DE0D76 /* NavigationBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@ import UIKit
 
 // Home screen which shows the vehicles listing with their respective details
 
-class VehiclesListingViewController: UIViewController {
+class VehiclesListingViewController: BaseViewController {
 
     //MARK:- IBOutlets
     @IBOutlet var vehiclesTableView: UITableView!
@@ -17,7 +17,6 @@ class VehiclesListingViewController: UIViewController {
     @IBOutlet var vehicleModelFilterView: UIView!
     @IBOutlet var currentMakeLabel: UILabel!
     @IBOutlet var currentModelLabel: UILabel!
-    @IBOutlet var resetFilterIcon: UIButton!
     @IBOutlet var errorView: UIView!
     @IBOutlet var errorLabel: UILabel!
     
@@ -46,24 +45,13 @@ class VehiclesListingViewController: UIViewController {
         self.presentActionSheet(withData: viewModel.modelListOfVehicles(), type: .vehicleModel)
     }
     
-    @IBAction func resetFilterTapped(sender: UIButton) {
-        
-        Utility.showAlertWith(message: Constants.VehicleInfo.resetFilter, parentVC: self) {
-            //reset filters and update view
-            self.viewModel.setSelectedMake(value: nil)
-            self.viewModel.setSelectedModel(value: nil)
-            self.currentMakeLabel.text = Constants.VehicleInfo.anyMake
-            self.currentModelLabel.text = Constants.VehicleInfo.anyModel
-            self.resetFilterIcon.isEnabled = self.viewModel.isFilterApplied
-        }
-    }
-    
     //MARK:- Initializer
     private func initializeOnLoad() {
+        self.addNavigationBar()
         self.errorView.isHidden = true
         self.viewModel.initializeWith(delegate: self)
         self.registerNibs()
-        self.resetFilterIcon.isEnabled = false
+        self.navigationBarView?.enableRightButton = false
         self.vehicleMakeFilterView.addShadow(offset: CGSize(width: 0, height: 3))
         self.vehicleModelFilterView.addShadow(offset: CGSize(width: 0, height: 3))
         self.viewModel.getVehicleDetails()
@@ -119,6 +107,19 @@ class VehiclesListingViewController: UIViewController {
         self.errorView.isHidden = !isVisible
         self.errorLabel.text = error
         self.vehiclesTableView.sizeHeaderViewToFit()
+    }
+    
+    /// Action on the click of reset filters button
+    override func rightButtonOnNavigationBarTapped() {
+        
+        self.showAlertWith(message: Constants.VehicleInfo.resetFilter) {
+            //reset filters and update view
+            self.viewModel.setSelectedMake(value: nil)
+            self.viewModel.setSelectedModel(value: nil)
+            self.currentMakeLabel.text = Constants.VehicleInfo.anyMake
+            self.currentModelLabel.text = Constants.VehicleInfo.anyModel
+            self.navigationBarView?.enableRightButton = self.viewModel.isFilterApplied
+        }
     }
 }
 
@@ -198,8 +199,7 @@ extension VehiclesListingViewController: VehicleListViewDelegate {
     
     func didReceiveErrorOnVehiclesListFetch(errorMessage: String) {
         DispatchQueue.main.async {
-            Utility.showAlertWith(message: errorMessage
-                                  , parentVC: self,
+            self.showAlertWith(message: errorMessage,
                                   hasSingleAction: true) {}
         }
     }
@@ -235,6 +235,6 @@ extension VehiclesListingViewController: CustomActionSheetDelegate {
             self.currentModelLabel.text = value
             self.viewModel.setSelectedModel(value: value)
         }
-        resetFilterIcon.isEnabled = viewModel.isFilterApplied
+        navigationBarView?.enableRightButton = viewModel.isFilterApplied
     }
 }
