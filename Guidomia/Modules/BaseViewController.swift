@@ -25,15 +25,16 @@ class BaseViewController: UIViewController {
     
     /// Add navigation bar on the view
     func addNavigationBar() {
-        
-        navigationBarView = UINib(nibName: NavigationBarView.reuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? NavigationBarView
+        navigationBarView = UINib(nibName: NavigationBarView.reuseIdentifier,
+                                  bundle: nil).instantiate(withOwner: nil,
+                                                           options: nil).first as? NavigationBarView
         navigationBarView?.frame = CGRect(x: 0,
-                                         y: 0,
-                                         width: self.view.frame.width,
-                                         height: navBarHeight)
+                                          y: 0,
+                                          width: self.view.frame.width,
+                                          height: navBarHeight)
         navigationBarView?.delegate = self
-        if let _ = navigationBarView {
-            self.view.addSubview(navigationBarView!)
+        if let navigationView = navigationBarView {
+            self.view.addSubview(navigationView)
         }
     }
     

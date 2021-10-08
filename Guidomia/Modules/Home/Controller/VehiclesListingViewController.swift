@@ -38,11 +38,13 @@ class VehiclesListingViewController: BaseViewController {
     
     //MARK:- IBActions
     @IBAction func anyMakeTapped(sender: UIButton) {
-        self.presentActionSheet(withData: viewModel.makesListOfVehicles(), type: .vehicleMake)
+        self.presentActionSheet(withData: viewModel.makesListOfVehicles(),
+                                type: .vehicleMake)
     }
     
     @IBAction func anyModelTapped(sender: UIButton) {
-        self.presentActionSheet(withData: viewModel.modelListOfVehicles(), type: .vehicleModel)
+        self.presentActionSheet(withData: viewModel.modelListOfVehicles(),
+                                type: .vehicleModel)
     }
     
     //MARK:- Initializer
@@ -179,7 +181,7 @@ extension VehiclesListingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat { 50 }
 }
 
-//MARK:- VehicleListViewPresenter
+//MARK:- VehicleListViewDelegate
 extension VehiclesListingViewController: VehicleListViewDelegate {
     
     /// reload tableview with the updated data source

@@ -211,7 +211,7 @@
 		A76737FF270CA50F000239FA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A7B12C9C27100E6600DE0D76 /* Base */,
+				A7B12C9D27100E7900DE0D76 /* BaseViewController.swift */,
 				A7673800270CA517000239FA /* Home */,
 			);
 			path = Modules;
@@ -256,8 +256,8 @@
 		A767380E270CB504000239FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A7B12C9F2710354B00DE0D76 /* SubView */,
 				A76EA660270DC1C200D722BE /* TableViewCell */,
-				A76EA65F270DC1AF00D722BE /* HeaderFooter */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,22 +283,9 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		A76EA65F270DC1AF00D722BE /* HeaderFooter */ = {
-			isa = PBXGroup;
-			children = (
-				A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */,
-				A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */,
-				A7E2E660270D534E00DEB77E /* SeparatorView.xib */,
-				A7E2E662270D54CA00DEB77E /* SeparatorView.swift */,
-			);
-			path = HeaderFooter;
-			sourceTree = "<group>";
-		};
 		A76EA660270DC1C200D722BE /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A76EA667270DE7C000D722BE /* ProsConsView.xib */,
-				A76EA669270DE84900D722BE /* ProsConsView.swift */,
 				A76EA663270DC20600D722BE /* VehicleProsConsTableViewCell.swift */,
 				A76EA664270DC20600D722BE /* VehicleProsConsTableViewCell.xib */,
 			);
@@ -334,12 +321,17 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
-		A7B12C9C27100E6600DE0D76 /* Base */ = {
+		A7B12C9F2710354B00DE0D76 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				A7B12C9D27100E7900DE0D76 /* BaseViewController.swift */,
+				A7673813270CB92B000239FA /* VehicleDescriptionHeaderView.swift */,
+				A7673815270CB93A000239FA /* VehicleDescriptionHeaderView.xib */,
+				A7E2E660270D534E00DEB77E /* SeparatorView.xib */,
+				A7E2E662270D54CA00DEB77E /* SeparatorView.swift */,
+				A76EA667270DE7C000D722BE /* ProsConsView.xib */,
+				A76EA669270DE84900D722BE /* ProsConsView.swift */,
 			);
-			path = Base;
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		A7E2E664270D641200DEB77E /* ViewModel */ = {

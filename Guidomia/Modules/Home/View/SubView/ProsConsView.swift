@@ -16,7 +16,9 @@ class ProsConsView: UIView {
     /// class function to load the nib in another view
     /// - Returns: The current view class
     class func loadFromNib() -> ProsConsView {
-        return UINib(nibName: ProsConsView.reuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ProsConsView
+        return UINib(nibName: ProsConsView.reuseIdentifier,
+                     bundle: nil).instantiate(withOwner: nil,
+                                              options: nil)[0] as! ProsConsView
     }
     
     //MARK:- Initializer

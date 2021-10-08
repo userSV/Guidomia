@@ -44,8 +44,11 @@ class VehicleListingViewModel {
     //MARK:- Helper Functions
     /// fetch the details from json file
     func getVehicleDetails() {
+        
         DispatchQueue.global().async {
-            let result = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: Constants.JsonFile.jsonExtension)
+            let result = Bundle.main.decode([Vehicle].self,
+                                            from: Constants.JsonFile.vehicleList,
+                                            fileExtension: Constants.JsonFile.jsonExtension)
             switch result {
             case .success(var vehicles):
                 let filteredList = self.filterProsConsList(vehicles: &vehicles)
@@ -61,6 +64,7 @@ class VehicleListingViewModel {
     /// - Parameter vehicles: vehicles array decoded
     /// - Returns: vehicles array with empty data removed
     private func filterProsConsList(vehicles: inout [Vehicle]) -> [Vehicle] {
+        
         for index in 0..<vehicles.count {
             if index == 0 {
                 vehicles[index].isExpanded = true
@@ -99,6 +103,7 @@ class VehicleListingViewModel {
     
     /// Filter the list of vehicles on the basis of their make and model
     private func filterVehiclesListWithMakeAndModel() {
+        
         if selectedMake != nil && selectedModel != nil {
             self.filteredVehicles = self.vehicles.filter {$0.makeName == selectedMake && $0.modelName == selectedModel}
         } else if selectedMake != nil || selectedModel != nil {
@@ -106,6 +111,7 @@ class VehicleListingViewModel {
         } else {
             self.filteredVehicles.removeAll()
         }
+        
         self.viewDelegate?.didUpdateFilterList()
     }
 }
@@ -123,7 +129,7 @@ extension VehicleListingViewModel {
     /// - Returns: true or false
     func isExpanded(index: Int) -> Bool {
         
-        if self.vehiclesList[index].prosList == nil && self.vehiclesList[index].consList == nil {
+        if self.vehiclesList[index].prosList?.count == 0 && self.vehiclesList[index].consList?.count == 0 {
             return false
         }
         return vehiclesList[index].isExpanded
@@ -161,17 +167,23 @@ extension VehicleListingViewModel {
     ///   - index: current index
     ///   - lastSelectedIndex: previous selected index
     func toggleOpenStateAt(index: Int, lastSelectedIndex: Int) {
+        
+        guard self.vehiclesList[index].prosList?.count != 0 || self.vehiclesList[index].consList?.count != 0 else {
+            return
+        }
         if index != lastSelectedIndex {
             // the current selected index is not the same as the previous one
             // change the expanded state of previous index
             self.vehicles[lastSelectedIndex].isExpanded = false
         }
         let isExpanded = self.vehiclesList[index].isExpanded
+        
         if isFilterApplied {
             filteredVehicles[index].isExpanded = !isExpanded
         } else {
             vehicles[index].isExpanded = !isExpanded
         }
+        
         self.viewDelegate?.updateViewState(isExpanded: self.vehiclesList[index].isExpanded,
                                            atIndex: index)
     }

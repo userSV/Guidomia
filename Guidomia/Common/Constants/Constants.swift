@@ -32,7 +32,7 @@ struct Constants {
     struct AppMessages {
         
         static let errorInLocatingFile = "Failed to locate file in bundle."
-        static let noRecordsFound = "No data found!"
+        static let noRecordsFound = "No records found!"
     }
     
     enum CustomError: Error {

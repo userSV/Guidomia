@@ -78,7 +78,8 @@ struct VehicleDetailViewModel {
     var name: String {
         if let make = make,
            let model = model {
-            return make.concatenateWith(separator: " ", list: [model])
+            return make.concatenateWith(separator: " ",
+                                        list: [model])
         }
         return ""
     }

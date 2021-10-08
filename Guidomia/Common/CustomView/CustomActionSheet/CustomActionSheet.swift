@@ -8,7 +8,8 @@
 import UIKit
 
 enum CustomActionSheetContentType {
-    case vehicleMake, vehicleModel
+    case vehicleMake
+    case vehicleModel
 }
 
 protocol CustomActionSheetDelegate: AnyObject {
@@ -36,7 +37,11 @@ class CustomActionSheet: UIView {
     /// set up the view and provide data source
     /// - Parameter data: array of strings
     func initializeWith(data: [String], delegateView: CustomActionSheetDelegate, frame: CGRect) {
-        self.frame = CGRect(x: 0, y: frame.height, width: frame.width, height: frame.height)
+        
+        self.frame = CGRect(x: 0,
+                            y: frame.height,
+                            width: frame.width,
+                            height: frame.height)
         self.dataSource = data
         self.delegate = delegateView
         self.fadedView.alpha = 0
@@ -45,7 +50,9 @@ class CustomActionSheet: UIView {
     }
     
     private func setTableViewHeight(mainFrameHeight: CGFloat) {
+        
         let totalHeight = CGFloat(self.dataSource.count) * rowHeight
+        
         if totalHeight > mainFrameHeight {
             tableViewHeightConstraint.constant = mainFrameHeight - topSpaceSize
             tableView.isScrollEnabled = true
@@ -57,13 +64,16 @@ class CustomActionSheet: UIView {
     
     func setUpView() {
         self.addTapGesture()
-        let actionSheetTableCell = UINib(nibName: ActionSheetTableViewCell.reuseIdentifier, bundle: nil)
-        self.tableView.register(actionSheetTableCell, forCellReuseIdentifier: ActionSheetTableViewCell.reuseIdentifier)
+        let actionSheetTableCell = UINib(nibName: ActionSheetTableViewCell.reuseIdentifier,
+                                         bundle: nil)
+        self.tableView.register(actionSheetTableCell,
+                                forCellReuseIdentifier: ActionSheetTableViewCell.reuseIdentifier)
     }
     
     //MARK:- Helper Functions
     /// removes the current view from superview with animating alpha
     func removeCurrentView() {
+        
         self.fadedView.alpha = 0
         UIView.animate(withDuration: animationDuration) {
             self.frame.origin.y = self.frame.height
@@ -79,6 +89,7 @@ class CustomActionSheet: UIView {
     }
     
     func addActionSheetOnParentViewWith(frame: CGRect, view: UIView) {
+        
         UIView.animate(withDuration: animationDuration) {
             self.frame.origin.y = self.frame.origin.y - frame.height
             self.delegate?.didCompleteViewPresentation()
