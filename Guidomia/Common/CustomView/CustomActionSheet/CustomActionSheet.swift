@@ -84,8 +84,8 @@ class CustomActionSheet: UIView {
     
     /// this will load and return the CustomActionSheet instance
     /// - Returns: CustomActionSheet
-    static func loadFromNib() -> CustomActionSheet {
-        return UINib(nibName: CustomActionSheet.reuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! CustomActionSheet
+    static func loadFromNib() -> CustomActionSheet? {
+        return UINib(nibName: CustomActionSheet.reuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil).first as? CustomActionSheet
     }
     
     func addActionSheetOnParentViewWith(frame: CGRect, view: UIView) {

@@ -15,10 +15,10 @@ class ProsConsView: UIView {
     //MARK:- Helper functions
     /// class function to load the nib in another view
     /// - Returns: The current view class
-    class func loadFromNib() -> ProsConsView {
+    class func loadFromNib() -> ProsConsView? {
         return UINib(nibName: ProsConsView.reuseIdentifier,
                      bundle: nil).instantiate(withOwner: nil,
-                                              options: nil)[0] as! ProsConsView
+                                              options: nil).first as? ProsConsView
     }
     
     //MARK:- Initializer

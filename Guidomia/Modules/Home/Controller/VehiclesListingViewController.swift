@@ -23,8 +23,9 @@ class VehiclesListingViewController: BaseViewController {
     //MARK:- Properties
     var viewModel = VehicleListingViewModel()
     private var lastSelectedIndex: Int = 0
-    lazy var customActionSheet: CustomActionSheet = {
-        let actionSheet = CustomActionSheet.loadFromNib()
+    lazy var customActionSheet: CustomActionSheet? = {
+        
+        guard let actionSheet = CustomActionSheet.loadFromNib() else { return nil }
         actionSheet.setUpView()
         return actionSheet
     }()
@@ -78,12 +79,13 @@ class VehiclesListingViewController: BaseViewController {
     
     //MARK:- Helper Functions
     private func presentActionSheet(withData data: [String], type: CustomActionSheetContentType) {
-        customActionSheet.initializeWith(data: data,
+        guard let actionSheet = customActionSheet else { return }
+        actionSheet.initializeWith(data: data,
                                          delegateView: self,
                                          frame: self.view.frame)
-        customActionSheet.contentType = type
-        self.view.addSubview(customActionSheet)
-        customActionSheet.addActionSheetOnParentViewWith(frame: view.frame,
+        actionSheet.contentType = type
+        self.view.addSubview(actionSheet)
+        actionSheet.addActionSheetOnParentViewWith(frame: view.frame,
                                                          view: view)
     }
     

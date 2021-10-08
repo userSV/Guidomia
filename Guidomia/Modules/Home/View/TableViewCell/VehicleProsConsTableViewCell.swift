@@ -54,7 +54,10 @@ class VehicleProsConsTableViewCell: UITableViewCell {
             prosViews[index].removeFromSuperview()
         }
         for index in 0..<pros.count {
-            self.prosViews.append(ProsConsView.loadFromNib())
+            guard let prosConsView = ProsConsView.loadFromNib() else {
+                return
+            }
+            self.prosViews.append(prosConsView)
             prosViews[index].setContent(pros[index])
             self.prosLabelContainerStackView.addArrangedSubview(prosViews[index])
         }
@@ -68,7 +71,10 @@ class VehicleProsConsTableViewCell: UITableViewCell {
             consViews[index].removeFromSuperview()
         }
         for index in 0..<cons.count {
-            self.consViews.append(ProsConsView.loadFromNib())
+            guard let prosConsView = ProsConsView.loadFromNib() else {
+                return
+            }
+            self.consViews.append(prosConsView)
             consViews[index].setContent(cons[index])
             self.consLabelContainerStackView.addArrangedSubview(consViews[index])
         }

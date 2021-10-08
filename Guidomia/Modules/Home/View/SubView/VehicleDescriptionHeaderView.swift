@@ -15,7 +15,7 @@ protocol VehicleSectionTapDelegate: AnyObject {
 class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
 
     //MARK:- Properties
-    weak var sectionTapDelegate: VehicleSectionTapDelegate!
+    weak var sectionTapDelegate: VehicleSectionTapDelegate?
     
     //MARK:- IBOutlets
     @IBOutlet var vehicleImageView: UIImageView!
@@ -52,7 +52,7 @@ class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
     
     //FIXME:- Fix
     @objc func didTapOnView(recognizer: UITapGestureRecognizer) {
-        self.sectionTapDelegate.didTapOnSectionAt(index: self.containerView.tag)
+        self.sectionTapDelegate?.didTapOnSectionAt(index: self.containerView.tag)
     }
 }
 
