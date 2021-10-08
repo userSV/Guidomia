@@ -17,7 +17,7 @@ class Utility {
     ///   - parentVC: parent view on which alert is to be presented
     ///   - action: action handler
     ///   - hasSingleAction: true if cancel action is to be added, else false by default
-    static func showAlertWith(title: String = "", message: String, parentVC: UIViewController, hasSingleAction: Bool? = false, action: @escaping () -> ()) {
+    static func showAlertWith(title: String = "", message: String, parentVC: UIViewController, hasSingleAction: Bool = false, action: @escaping () -> ()) {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)

@@ -45,15 +45,14 @@ class VehicleListingViewModel {
     /// fetch the details from json file
     func getVehicleDetails() {
         DispatchQueue.global().async {
-            if let result = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: Constants.JsonFile.jsonExtension) {
-                switch result {
-                case .success(var vehicles):
-                    let filteredList = self.filterProsConsList(vehicles: &vehicles)
-                    self.vehicles.append(contentsOf: filteredList)
-                    self.viewDelegate?.didReceiveVehiclesList()
-                case .failure(let error):
-                    self.viewDelegate?.didReceiveErrorOnVehiclesListFetch(errorMessage: error.localizedDescription)
-                }
+            let result = Bundle.main.decode([Vehicle].self, from: Constants.JsonFile.vehicleList, fileExtension: Constants.JsonFile.jsonExtension)
+            switch result {
+            case .success(var vehicles):
+                let filteredList = self.filterProsConsList(vehicles: &vehicles)
+                self.vehicles.append(contentsOf: filteredList)
+                self.viewDelegate?.didReceiveVehiclesList()
+            case .failure(let error):
+                self.viewDelegate?.didReceiveErrorOnVehiclesListFetch(errorMessage: error.localizedDescription)
             }
         }
     }
@@ -82,6 +81,7 @@ class VehicleListingViewModel {
     func numberOfRowsAt(section: Int) -> Int {1}
     
     func isExpanded(section: Int) -> Bool {
+        
         if self.vehiclesList[section].prosList == nil && self.vehiclesList[section].consList == nil {
             return false
         }
@@ -92,7 +92,12 @@ class VehicleListingViewModel {
     /// - Parameter section: current section index
     /// - Returns: visual representation of data
     func viewModelForVehicleAt(_ section: Int) -> VehicleDetailViewModel {
-        let viewModel = VehicleDetailViewModel(make: self.vehiclesList[section].makeName, price: self.vehiclesList[section].customerPrice, rating: self.vehiclesList[section].rating, image: self.vehiclesList[section].image, model: self.vehiclesList[section].modelName)
+        
+        let viewModel = VehicleDetailViewModel(make: self.vehiclesList[section].makeName,
+                                               price: self.vehiclesList[section].customerPrice,
+                                               rating: self.vehiclesList[section].rating,
+                                               image: self.vehiclesList[section].image,
+                                               model: self.vehiclesList[section].modelName)
         return viewModel
     }
     
@@ -112,7 +117,8 @@ class VehicleListingViewModel {
     
     func toggleOpenStateAt(index: Int, lastSelectedIndex: Int) {
         if index != lastSelectedIndex {
-            //the current selected index is not the same as the previous one, then change the expanded state of previous index
+            // the current selected index is not the same as the previous one
+            // change the expanded state of previous index
             self.vehicles[lastSelectedIndex].isExpanded = false
         }
         let isExpanded = self.vehiclesList[index].isExpanded
@@ -121,7 +127,8 @@ class VehicleListingViewModel {
         } else {
             vehicles[index].isExpanded = !isExpanded
         }
-        self.viewDelegate?.updateViewState(isExpanded: self.vehiclesList[index].isExpanded, atIndex: index)
+        self.viewDelegate?.updateViewState(isExpanded: self.vehiclesList[index].isExpanded,
+                                           atIndex: index)
     }
     
     /// returns the makes of all vehicles in an array
@@ -140,18 +147,18 @@ class VehicleListingViewModel {
     /// - Parameter value: value as string
     func setSelectedMake(value: String?) {
         self.selectedMake = value
-        filterListOnTheBasisOfMakeAndModel()
+        filterVehiclesListWithMakeAndModel()
     }
     
     /// set the selected model value
     /// - Parameter value: value as string
     func setSelectedModel(value: String?) {
         self.selectedModel = value
-        filterListOnTheBasisOfMakeAndModel()
+        filterVehiclesListWithMakeAndModel()
     }
     
     /// Filter the list of vehicles on the basis of their make and model
-    func filterListOnTheBasisOfMakeAndModel() {
+    private func filterVehiclesListWithMakeAndModel() {
         if selectedMake != nil && selectedModel != nil {
             self.filteredVehicles = self.vehicles.filter {$0.makeName == selectedMake && $0.modelName == selectedModel}
         } else if selectedMake != nil || selectedModel != nil {

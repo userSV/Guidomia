@@ -29,9 +29,9 @@ class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
     }
     
     private func setTapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnView(recognizer:)))
-        tap.numberOfTapsRequired = 1
-        containerView.addGestureRecognizer(tap)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnView(recognizer:)))
+        tapGesture.numberOfTapsRequired = 1
+        containerView.addGestureRecognizer(tapGesture)
     }
 
     //MARK:- Set Data
@@ -52,7 +52,6 @@ class VehicleDescriptionHeaderView: UITableViewHeaderFooterView {
     
     //FIXME:- Fix
     @objc func didTapOnView(recognizer: UITapGestureRecognizer) {
-        print("tapped")
         self.sectionTapDelegate.didTapOnSectionAt(index: self.containerView.tag)
     }
 }

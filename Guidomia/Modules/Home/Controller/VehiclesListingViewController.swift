@@ -6,9 +6,9 @@
 //
 
 import UIKit
-/*
- Home screen which shows the vehicles listing with their respective details
- */
+
+// Home screen which shows the vehicles listing with their respective details
+
 class VehiclesListingViewController: UIViewController {
 
     //MARK:- IBOutlets

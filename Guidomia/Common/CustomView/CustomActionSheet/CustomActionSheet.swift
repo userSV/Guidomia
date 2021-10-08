@@ -22,7 +22,7 @@ class CustomActionSheet: UIView {
     //MARK:- Properties
     /// data source for the tableview
     private var dataSource = [String]()
-    private let rowHeight: CGFloat = 44
+    private let rowHeight: CGFloat = 44.0
     weak var delegate: CustomActionSheetDelegate?
     var contentType: CustomActionSheetContentType = .vehicleMake
     enum CustomActionSheetContentType {
@@ -37,7 +37,7 @@ class CustomActionSheet: UIView {
         self.dataSource = data
         self.delegate = delegateView
         self.fadedView.alpha = 0
-        tableViewHeightConstraint.constant = CGFloat(self.dataSource.count * 44)
+        tableViewHeightConstraint.constant = CGFloat(self.dataSource.count) * rowHeight
         tableView.reloadData()
     }
     
@@ -64,7 +64,6 @@ class CustomActionSheet: UIView {
     func addActionSheetOnParentViewWith(frame: CGRect, view: UIView) {
         UIView.animate(withDuration: 0.3) {
             self.frame.origin.y = self.frame.origin.y - frame.height
-            //view.layoutIfNeeded()
             self.delegate?.didCompleteViewPresentation()
             self.alpha = 1.0
         } completion: { _ in
@@ -76,9 +75,9 @@ class CustomActionSheet: UIView {
     
     //MARK:- Gesture Recognizer
     private func addTapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(gestureTapped))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(gestureTapped))
         fadedView.isUserInteractionEnabled = true
-        self.fadedView.addGestureRecognizer(tap)
+        self.fadedView.addGestureRecognizer(tapGesture)
     }
     
     //removes the current view from the parent view on tap

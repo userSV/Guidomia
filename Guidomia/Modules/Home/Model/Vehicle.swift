@@ -7,8 +7,10 @@
 
 import Foundation
 
-//This struct holds the information of the vehicle for eg. its name, model, pricing etc.
+// This struct holds the information of the vehicle for eg. its name, model, pricing etc.
+
 struct Vehicle: Decodable {
+    
     var modelName: String?
     var makeName: String?
     var customerPrice: Double?

@@ -31,7 +31,10 @@ extension String {
     ///   - list: array of other strings to add
     /// - Returns: The concatenated string
     func concatenateWith(separator: String, list: [String]) -> String {
+        guard !list.isEmpty else {
+            return self
+        }
         let stringToAdd = list.joined(separator: separator)
-        return stringToAdd != "" ? self + separator + stringToAdd : self
+        return self + separator + stringToAdd
     }
 }
