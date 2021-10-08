@@ -44,8 +44,8 @@ class CustomActionSheet: UIView {
     
     func setUpView() {
         self.addTapGesture()
-        let nib = UINib(nibName: ActionSheetTableViewCell.reuseIdentifier, bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: ActionSheetTableViewCell.reuseIdentifier)
+        let actionSheetTableCell = UINib(nibName: ActionSheetTableViewCell.reuseIdentifier, bundle: nil)
+        self.tableView.register(actionSheetTableCell, forCellReuseIdentifier: ActionSheetTableViewCell.reuseIdentifier)
     }
     
     //MARK:- Helper Functions

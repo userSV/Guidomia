@@ -31,6 +31,7 @@
 		A7A1236E270EB88E002BEDCB /* ActionSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A1236C270EB88E002BEDCB /* ActionSheetTableViewCell.xib */; };
 		A7A12370270EDC18002BEDCB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1236F270EDC18002BEDCB /* Bundle+Extension.swift */; };
 		A7A12373270F1F67002BEDCB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A12372270F1F67002BEDCB /* Utility.swift */; };
+		A7B12C922710013600DE0D76 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C912710013600DE0D76 /* UITableView+Extension.swift */; };
 		A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E2E660270D534E00DEB77E /* SeparatorView.xib */; };
 		A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E662270D54CA00DEB77E /* SeparatorView.swift */; };
 		A7E2E666270D642A00DEB77E /* VehicleListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */; };
@@ -94,6 +95,7 @@
 		A7A1236C270EB88E002BEDCB /* ActionSheetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionSheetTableViewCell.xib; sourceTree = "<group>"; };
 		A7A1236F270EDC18002BEDCB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		A7A12372270F1F67002BEDCB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A7B12C912710013600DE0D76 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		A7E2E660270D534E00DEB77E /* SeparatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorView.xib; sourceTree = "<group>"; };
 		A7E2E662270D54CA00DEB77E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListingViewModel.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				A7673811270CB7C7000239FA /* UIView+Extension.swift */,
 				A7E2E667270D6D4A00DEB77E /* String+Extension.swift */,
 				A7A1236F270EDC18002BEDCB /* Bundle+Extension.swift */,
+				A7B12C912710013600DE0D76 /* UITableView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				A76EA66A270DE84900D722BE /* ProsConsView.swift in Sources */,
 				A7673809270CA692000239FA /* Vehicle.swift in Sources */,
 				A7A12367270EB6E8002BEDCB /* CustomActionSheet.swift in Sources */,
+				A7B12C922710013600DE0D76 /* UITableView+Extension.swift in Sources */,
 				A7673814270CB92B000239FA /* VehicleDescriptionHeaderView.swift in Sources */,
 				A76737CF270CA1BA000239FA /* SceneDelegate.swift in Sources */,
 				A7E2E668270D6D4A00DEB77E /* String+Extension.swift in Sources */,

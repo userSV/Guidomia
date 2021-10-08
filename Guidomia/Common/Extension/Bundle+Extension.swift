@@ -16,8 +16,8 @@ extension Bundle {
     ///   - fileExtension: extension of the file
     /// - Returns: Result type with success or error
     func decode<T: Decodable>(_ type: T.Type, from file: String, fileExtension: String) -> Result<T, Error> {
-        guard let url = self.url(forResource: file, withExtension: fileExtension),
-              let data = try? Data(contentsOf: url) else {
+        guard let fileUrl = self.url(forResource: file, withExtension: fileExtension),
+              let data = try? Data(contentsOf: fileUrl) else {
             let errorMessage = Constants.AppMessages.errorInLocatingFile
             return .failure(Constants.CustomError.errorInDecodingData(error: errorMessage))
         }

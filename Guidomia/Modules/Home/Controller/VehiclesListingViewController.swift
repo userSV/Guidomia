@@ -18,6 +18,8 @@ class VehiclesListingViewController: UIViewController {
     @IBOutlet var currentMakeLabel: UILabel!
     @IBOutlet var currentModelLabel: UILabel!
     @IBOutlet var resetFilterIcon: UIButton!
+    @IBOutlet var errorView: UIView!
+    @IBOutlet var errorLabel: UILabel!
     
     //MARK:- Properties
     var viewModel = VehicleListingViewModel()
@@ -45,6 +47,7 @@ class VehiclesListingViewController: UIViewController {
     }
     
     @IBAction func resetFilterTapped(sender: UIButton) {
+        
         Utility.showAlertWith(message: Constants.VehicleInfo.resetFilter, parentVC: self) {
             //reset filters and update view
             self.viewModel.setSelectedMake(value: nil)
@@ -57,6 +60,7 @@ class VehiclesListingViewController: UIViewController {
     
     //MARK:- Initializer
     private func initializeOnLoad() {
+        self.errorView.isHidden = true
         self.viewModel.initializeWith(delegate: self)
         self.registerNibs()
         self.resetFilterIcon.isEnabled = false
@@ -68,8 +72,10 @@ class VehiclesListingViewController: UIViewController {
     //MARK:- Register Nibs
     /// Register the nibs with the tableview
     private func registerNibs() {
-        let headerView = UINib(nibName: VehicleDescriptionHeaderView.reuseIdentifier, bundle: nil)
-        let footerView = UINib(nibName: SeparatorView.reuseIdentifier, bundle: nil)
+        let headerView = UINib(nibName: VehicleDescriptionHeaderView.reuseIdentifier,
+                               bundle: nil)
+        let footerView = UINib(nibName: SeparatorView.reuseIdentifier,
+                               bundle: nil)
         self.vehiclesTableView.register(headerView,
                                         forHeaderFooterViewReuseIdentifier: VehicleDescriptionHeaderView.reuseIdentifier)
         self.vehiclesTableView.register(footerView,
@@ -82,10 +88,37 @@ class VehiclesListingViewController: UIViewController {
     
     //MARK:- Helper Functions
     private func presentActionSheet(withData data: [String], type: CustomActionSheetContentType) {
-        customActionSheet.initializeWith(data: data, delegateView: self, frame: self.view.frame)
+        customActionSheet.initializeWith(data: data,
+                                         delegateView: self,
+                                         frame: self.view.frame)
         customActionSheet.contentType = type
         self.view.addSubview(customActionSheet)
-        customActionSheet.addActionSheetOnParentViewWith(frame: view.frame, view: view)
+        customActionSheet.addActionSheetOnParentViewWith(frame: view.frame,
+                                                         view: view)
+    }
+    
+    /// Reload the view with the updated data
+    private func reloadView() {
+        DispatchQueue.main.async {
+            if self.viewModel.numberOfVehicles() == 0 {
+                self.displayErrorView(withError: Constants.AppMessages.noRecordsFound,
+                                      isVisible: true)
+            } else {
+                self.displayErrorView(withError: nil,
+                                      isVisible: false)
+            }
+            self.vehiclesTableView.reloadData()
+        }
+    }
+    
+    /// Display error view
+    /// - Parameters:
+    ///   - error: error message
+    ///   - isVisible: true if error is to be shown, else false
+    private func displayErrorView(withError error: String?, isVisible: Bool) {
+        self.errorView.isHidden = !isVisible
+        self.errorLabel.text = error
+        self.vehiclesTableView.sizeHeaderViewToFit()
     }
 }
 
@@ -150,7 +183,7 @@ extension VehiclesListingViewController: VehicleListViewDelegate {
     
     /// reload tableview with the updated data source
     func didUpdateFilterList() {
-        self.vehiclesTableView.reloadData()
+        self.reloadView()
     }
     
     func updateViewState(isExpanded: Bool, atIndex index: Int) {
@@ -160,9 +193,7 @@ extension VehiclesListingViewController: VehicleListViewDelegate {
     }
     
     func didReceiveVehiclesList() {
-        DispatchQueue.main.async {
-            self.vehiclesTableView.reloadData()
-        }
+        self.reloadView()
     }
     
     func didReceiveErrorOnVehiclesListFetch(errorMessage: String) {
