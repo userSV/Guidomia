@@ -29,6 +29,9 @@ class VehiclesListingViewController: BaseViewController {
         actionSheet.setUpView()
         return actionSheet
     }()
+    private let shadowOffset = CGSize(width: 0, height: 3)
+    private let headerEstimatedHeight: CGFloat = 100.0
+    private let rowEstimatedHeight: CGFloat = 30.0
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
@@ -55,8 +58,8 @@ class VehiclesListingViewController: BaseViewController {
         self.viewModel.initializeWith(delegate: self)
         self.registerNibs()
         self.navigationBarView?.enableRightButton = false
-        self.vehicleMakeFilterView.addShadow(offset: CGSize(width: 0, height: 3))
-        self.vehicleModelFilterView.addShadow(offset: CGSize(width: 0, height: 3))
+        self.vehicleMakeFilterView.addShadow(offset: shadowOffset)
+        self.vehicleModelFilterView.addShadow(offset: shadowOffset)
         self.viewModel.getVehicleDetails()
     }
     
@@ -139,11 +142,11 @@ extension VehiclesListingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: VehicleProsConsTableViewCell.reuseIdentifier, for: indexPath) as? VehicleProsConsTableViewCell {
-            cell.setData(prosList: viewModel.prosListAt(index: indexPath.section), consList: viewModel.consListAt(index: indexPath.section))
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: VehicleProsConsTableViewCell.reuseIdentifier, for: indexPath) as? VehicleProsConsTableViewCell else {
+            return UITableViewCell()
         }
-        return UITableViewCell()
+        cell.setData(prosList: viewModel.prosListAt(index: indexPath.section), consList: viewModel.consListAt(index: indexPath.section))
+        return cell
     }
 }
 
@@ -152,35 +155,35 @@ extension VehiclesListingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { UITableView.automaticDimension }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat { 100 }
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat { headerEstimatedHeight }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { 30 }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { rowEstimatedHeight }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let headerview = tableView.dequeueReusableHeaderFooterView(withIdentifier: VehicleDescriptionHeaderView.reuseIdentifier) as? VehicleDescriptionHeaderView {
-            headerview.sectionTapDelegate = self
-            let headerViewModel = viewModel.viewModelForVehicleAt(section)
-            headerview.setDataWith(viewModel: headerViewModel, atIndex: section)
-            return headerview
+        guard let headerview = tableView.dequeueReusableHeaderFooterView(withIdentifier: VehicleDescriptionHeaderView.reuseIdentifier) as? VehicleDescriptionHeaderView else {
+            return nil
         }
-        return nil
+        headerview.sectionTapDelegate = self
+        let headerViewModel = viewModel.viewModelForVehicleAt(section)
+        headerview.setDataWith(viewModel: headerViewModel, atIndex: section)
+        return headerview
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SeparatorView.reuseIdentifier) as? SeparatorView {
-            return footerView
+        guard let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SeparatorView.reuseIdentifier) as? SeparatorView else {
+            return nil
         }
-        return nil
+        return footerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if !viewModel.isExpanded(index: indexPath.section) {
-            return 0.00000001
+        guard !viewModel.isExpanded(index: indexPath.section) else {
+            return UITableView.automaticDimension
         }
-        return UITableView.automaticDimension
+        return CGFloat.leastNormalMagnitude
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat { 50 }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat { rowEstimatedHeight }
 }
 
 //MARK:- VehicleListViewDelegate
