@@ -68,7 +68,7 @@ struct VehicleDetailViewModel {
     var displayPrice: String {
         if let price = price {
             let priceToInt = Int(price)
-            let formattedPrice = String(priceToInt).formattedForThousand() ?? "0"
+            let formattedPrice = String(priceToInt).formattedForThousand()
             return "\(Constants.VehicleInfo.priceText) : \(formattedPrice)"
         }
         return "\(Constants.VehicleInfo.priceText) : 0"

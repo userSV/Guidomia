@@ -35,7 +35,7 @@ struct Constants {
         static let noRecordsFound = "No records found!"
     }
     
-    enum CustomError: Error {
+    enum CustomError: Equatable, Error {
         
         case errorInDecodingData(error: String)
     }

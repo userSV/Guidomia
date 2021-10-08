@@ -18,12 +18,12 @@ class VehicleListingViewModel {
     
     //MARK:- Properties
     /// store the list of all vehicles
-    private var vehicles = [Vehicle]()
+    var vehicles = [Vehicle]()
     weak var viewDelegate: VehicleListViewDelegate?
-    private var selectedMake: String?
-    private var selectedModel: String?
+    var selectedMake: String?
+    var selectedModel: String?
     /// stores the list of filtered vehicles
-    private var filteredVehicles = [Vehicle]()
+    var filteredVehicles = [Vehicle]()
     /// will return true if the filter is selected , else return false
     var isFilterApplied: Bool {
         if selectedMake != nil || selectedModel != nil {
@@ -63,7 +63,7 @@ class VehicleListingViewModel {
     /// filter the non-empty pros and cons list from the decoded json
     /// - Parameter vehicles: vehicles array decoded
     /// - Returns: vehicles array with empty data removed
-    private func filterProsConsList(vehicles: inout [Vehicle]) -> [Vehicle] {
+     func filterProsConsList(vehicles: inout [Vehicle]) -> [Vehicle] {
         
         for index in 0..<vehicles.count {
             if index == 0 {
@@ -78,13 +78,13 @@ class VehicleListingViewModel {
     /// returns the makes of all vehicles in an array
     /// - Returns: array of strings
     func makesListOfVehicles() -> [String] {
-        return self.vehicles.map {$0.makeName ?? ""}
+        return self.vehicles.compactMap {$0.makeName} //.map {$0.makeName ?? ""}
     }
     
     /// returns the models of all vehicles in an array
     /// - Returns: array of strings
     func modelListOfVehicles() -> [String] {
-        return self.vehicles.map {$0.modelName ?? ""}
+        return self.vehicles.compactMap {$0.modelName}
     }
     
     /// set the selected make value

@@ -14,8 +14,6 @@
 		A76737D7270CA1BA000239FA /* Guidomia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A76737D5270CA1BA000239FA /* Guidomia.xcdatamodeld */; };
 		A76737D9270CA1BB000239FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76737D8270CA1BB000239FA /* Assets.xcassets */; };
 		A76737DC270CA1BB000239FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76737DA270CA1BB000239FA /* LaunchScreen.storyboard */; };
-		A76737E7270CA1BB000239FA /* GuidomiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737E6270CA1BB000239FA /* GuidomiaTests.swift */; };
-		A76737F2270CA1BB000239FA /* GuidomiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76737F1270CA1BB000239FA /* GuidomiaUITests.swift */; };
 		A7673809270CA692000239FA /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673808270CA692000239FA /* Vehicle.swift */; };
 		A767380C270CA760000239FA /* VehiclesListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767380B270CA760000239FA /* VehiclesListingViewController.swift */; };
 		A7673812270CB7C7000239FA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7673811270CB7C7000239FA /* UIView+Extension.swift */; };
@@ -34,6 +32,10 @@
 		A7B12C972710095300DE0D76 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B12C962710095300DE0D76 /* NavigationBarView.xib */; };
 		A7B12C9B27100C2700DE0D76 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C9A27100C2700DE0D76 /* NavigationBarView.swift */; };
 		A7B12C9E27100E7900DE0D76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12C9D27100E7900DE0D76 /* BaseViewController.swift */; };
+		A7B12CA12710449B00DE0D76 /* VehicleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12CA02710449B00DE0D76 /* VehicleViewModelTests.swift */; };
+		A7B12CA32710616A00DE0D76 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12CA22710616A00DE0D76 /* StringExtensionTests.swift */; };
+		A7B12CA5271062D500DE0D76 /* BundleExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12CA4271062D500DE0D76 /* BundleExtensionTests.swift */; };
+		A7B12CA72710635200DE0D76 /* VehicleDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B12CA62710635200DE0D76 /* VehicleDetailViewModelTests.swift */; };
 		A7E2E661270D534E00DEB77E /* SeparatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E2E660270D534E00DEB77E /* SeparatorView.xib */; };
 		A7E2E663270D54CA00DEB77E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E662270D54CA00DEB77E /* SeparatorView.swift */; };
 		A7E2E666270D642A00DEB77E /* VehicleListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */; };
@@ -41,18 +43,10 @@
 		A7E2E66D270D80F100DEB77E /* VehicleList.json in Resources */ = {isa = PBXBuildFile; fileRef = A7E2E66C270D80F100DEB77E /* VehicleList.json */; };
 		A7E2E672270DA39B00DEB77E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E671270DA39B00DEB77E /* Constants.swift */; };
 		AEAFFB7F4153546386B7B72F /* Pods_Guidomia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33A1AE9BF3703810C621EF9 /* Pods_Guidomia.framework */; };
-		F19CC9FB7C822B3CCD87E52D /* Pods_Guidomia_GuidomiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48055A3944676419EF1F1C99 /* Pods_Guidomia_GuidomiaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A76737E3270CA1BB000239FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A76737C1270CA1BA000239FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A76737C8270CA1BA000239FA;
-			remoteInfo = Guidomia;
-		};
-		A76737EE270CA1BB000239FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A76737C1270CA1BA000239FA /* Project object */;
 			proxyType = 1;
@@ -77,11 +71,7 @@
 		A76737DB270CA1BB000239FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A76737DD270CA1BB000239FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A76737E2270CA1BB000239FA /* GuidomiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A76737E6270CA1BB000239FA /* GuidomiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaTests.swift; sourceTree = "<group>"; };
 		A76737E8270CA1BB000239FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A76737ED270CA1BB000239FA /* GuidomiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A76737F1270CA1BB000239FA /* GuidomiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITests.swift; sourceTree = "<group>"; };
-		A76737F3270CA1BB000239FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7673808270CA692000239FA /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		A767380B270CA760000239FA /* VehiclesListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListingViewController.swift; sourceTree = "<group>"; };
 		A7673811270CB7C7000239FA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -100,6 +90,10 @@
 		A7B12C962710095300DE0D76 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
 		A7B12C9A27100C2700DE0D76 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		A7B12C9D27100E7900DE0D76 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A7B12CA02710449B00DE0D76 /* VehicleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModelTests.swift; sourceTree = "<group>"; };
+		A7B12CA22710616A00DE0D76 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		A7B12CA4271062D500DE0D76 /* BundleExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensionTests.swift; sourceTree = "<group>"; };
+		A7B12CA62710635200DE0D76 /* VehicleDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailViewModelTests.swift; sourceTree = "<group>"; };
 		A7E2E660270D534E00DEB77E /* SeparatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorView.xib; sourceTree = "<group>"; };
 		A7E2E662270D54CA00DEB77E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		A7E2E665270D642A00DEB77E /* VehicleListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListingViewModel.swift; sourceTree = "<group>"; };
@@ -128,14 +122,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A76737EA270CA1BB000239FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F19CC9FB7C822B3CCD87E52D /* Pods_Guidomia_GuidomiaUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -157,7 +143,6 @@
 			children = (
 				A76737CB270CA1BA000239FA /* Guidomia */,
 				A76737E5270CA1BB000239FA /* GuidomiaTests */,
-				A76737F0270CA1BB000239FA /* GuidomiaUITests */,
 				A76737CA270CA1BA000239FA /* Products */,
 				85CD84270F390054CDA34003 /* Pods */,
 				BABCA09B07FB1692237EA9B7 /* Frameworks */,
@@ -169,7 +154,6 @@
 			children = (
 				A76737C9270CA1BA000239FA /* Guidomia.app */,
 				A76737E2270CA1BB000239FA /* GuidomiaTests.xctest */,
-				A76737ED270CA1BB000239FA /* GuidomiaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,19 +177,13 @@
 		A76737E5270CA1BB000239FA /* GuidomiaTests */ = {
 			isa = PBXGroup;
 			children = (
-				A76737E6270CA1BB000239FA /* GuidomiaTests.swift */,
 				A76737E8270CA1BB000239FA /* Info.plist */,
+				A7B12CA02710449B00DE0D76 /* VehicleViewModelTests.swift */,
+				A7B12CA22710616A00DE0D76 /* StringExtensionTests.swift */,
+				A7B12CA4271062D500DE0D76 /* BundleExtensionTests.swift */,
+				A7B12CA62710635200DE0D76 /* VehicleDetailViewModelTests.swift */,
 			);
 			path = GuidomiaTests;
-			sourceTree = "<group>";
-		};
-		A76737F0270CA1BB000239FA /* GuidomiaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A76737F1270CA1BB000239FA /* GuidomiaUITests.swift */,
-				A76737F3270CA1BB000239FA /* Info.plist */,
-			);
-			path = GuidomiaUITests;
 			sourceTree = "<group>";
 		};
 		A76737FF270CA50F000239FA /* Modules */ = {
@@ -409,26 +387,6 @@
 			productReference = A76737E2270CA1BB000239FA /* GuidomiaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A76737EC270CA1BB000239FA /* GuidomiaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A76737FC270CA1BB000239FA /* Build configuration list for PBXNativeTarget "GuidomiaUITests" */;
-			buildPhases = (
-				A682808247A7DD83AE6D17C2 /* [CP] Check Pods Manifest.lock */,
-				A76737E9270CA1BB000239FA /* Sources */,
-				A76737EA270CA1BB000239FA /* Frameworks */,
-				A76737EB270CA1BB000239FA /* Resources */,
-				B034D699F122C0A384C849F9 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A76737EF270CA1BB000239FA /* PBXTargetDependency */,
-			);
-			name = GuidomiaUITests;
-			productName = GuidomiaUITests;
-			productReference = A76737ED270CA1BB000239FA /* GuidomiaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -442,10 +400,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					A76737E1270CA1BB000239FA = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = A76737C8270CA1BA000239FA;
-					};
-					A76737EC270CA1BB000239FA = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = A76737C8270CA1BA000239FA;
 					};
@@ -466,7 +420,6 @@
 			targets = (
 				A76737C8270CA1BA000239FA /* Guidomia */,
 				A76737E1270CA1BB000239FA /* GuidomiaTests */,
-				A76737EC270CA1BB000239FA /* GuidomiaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -491,13 +444,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A76737E0270CA1BB000239FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A76737EB270CA1BB000239FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -568,45 +514,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A682808247A7DD83AE6D17C2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Guidomia-GuidomiaUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B034D699F122C0A384C849F9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Guidomia-GuidomiaUITests/Pods-Guidomia-GuidomiaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Guidomia-GuidomiaUITests/Pods-Guidomia-GuidomiaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Guidomia-GuidomiaUITests/Pods-Guidomia-GuidomiaUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -640,15 +547,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76737E7270CA1BB000239FA /* GuidomiaTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A76737E9270CA1BB000239FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A76737F2270CA1BB000239FA /* GuidomiaUITests.swift in Sources */,
+				A7B12CA5271062D500DE0D76 /* BundleExtensionTests.swift in Sources */,
+				A7B12CA32710616A00DE0D76 /* StringExtensionTests.swift in Sources */,
+				A7B12CA72710635200DE0D76 /* VehicleDetailViewModelTests.swift in Sources */,
+				A7B12CA12710449B00DE0D76 /* VehicleViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,11 +561,6 @@
 			isa = PBXTargetDependency;
 			target = A76737C8270CA1BA000239FA /* Guidomia */;
 			targetProxy = A76737E3270CA1BB000239FA /* PBXContainerItemProxy */;
-		};
-		A76737EF270CA1BB000239FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A76737C8270CA1BA000239FA /* Guidomia */;
-			targetProxy = A76737EE270CA1BB000239FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -887,46 +784,6 @@
 			};
 			name = Release;
 		};
-		A76737FD270CA1BB000239FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C82198AEE2FD192095BBF66E /* Pods-Guidomia-GuidomiaUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GuidomiaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.GuidomiaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Guidomia;
-			};
-			name = Debug;
-		};
-		A76737FE270CA1BB000239FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3998AC5F2DD7970913DE5474 /* Pods-Guidomia-GuidomiaUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GuidomiaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.GuidomiaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Guidomia;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -953,15 +810,6 @@
 			buildConfigurations = (
 				A76737FA270CA1BB000239FA /* Debug */,
 				A76737FB270CA1BB000239FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A76737FC270CA1BB000239FA /* Build configuration list for PBXNativeTarget "GuidomiaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A76737FD270CA1BB000239FA /* Debug */,
-				A76737FE270CA1BB000239FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

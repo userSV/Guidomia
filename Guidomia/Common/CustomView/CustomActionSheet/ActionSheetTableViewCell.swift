@@ -11,12 +11,6 @@ class ActionSheetTableViewCell: UITableViewCell {
 
     //MARK:- IBOutlets
     @IBOutlet var contentLabel: UILabel!
-    
-    //MARK:- View Life Cycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
    //MARK:- Initialization
     /// set data in the label
