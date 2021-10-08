@@ -29,6 +29,8 @@ class CustomActionSheet: UIView {
     private let rowHeight: CGFloat = 44.0
     weak var delegate: CustomActionSheetDelegate?
     var contentType: CustomActionSheetContentType = .vehicleMake
+    private let topSpaceSize: CGFloat = 200.0
+    private let animationDuration: TimeInterval = 0.3
     
     //MARK:- Initialize
     /// set up the view and provide data source
@@ -38,8 +40,19 @@ class CustomActionSheet: UIView {
         self.dataSource = data
         self.delegate = delegateView
         self.fadedView.alpha = 0
-        tableViewHeightConstraint.constant = CGFloat(self.dataSource.count) * rowHeight
+        self.setTableViewHeight(mainFrameHeight: frame.height)
         tableView.reloadData()
+    }
+    
+    private func setTableViewHeight(mainFrameHeight: CGFloat) {
+        let totalHeight = CGFloat(self.dataSource.count) * rowHeight
+        if totalHeight > mainFrameHeight {
+            tableViewHeightConstraint.constant = mainFrameHeight - topSpaceSize
+            tableView.isScrollEnabled = true
+        } else {
+            tableViewHeightConstraint.constant = totalHeight
+            tableView.isScrollEnabled = false
+        }
     }
     
     func setUpView() {
@@ -51,9 +64,12 @@ class CustomActionSheet: UIView {
     //MARK:- Helper Functions
     /// removes the current view from superview with animating alpha
     func removeCurrentView() {
-        UIView.animate(withDuration: 0.2) {
+        self.fadedView.alpha = 0
+        UIView.animate(withDuration: animationDuration) {
+            self.frame.origin.y = self.frame.height
+        } completion: { _ in
             self.removeFromSuperview()
-        } completion: { _ in }
+        }
     }
     
     /// this will load and return the CustomActionSheet instance
@@ -63,12 +79,12 @@ class CustomActionSheet: UIView {
     }
     
     func addActionSheetOnParentViewWith(frame: CGRect, view: UIView) {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: animationDuration) {
             self.frame.origin.y = self.frame.origin.y - frame.height
             self.delegate?.didCompleteViewPresentation()
             self.alpha = 1.0
         } completion: { _ in
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: self.animationDuration) {
                 self.fadedView.alpha = 0.6
             }
         }
